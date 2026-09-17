@@ -49,12 +49,31 @@
 
 ---
 
-## ⚡ Highlights
+## ⚡ Highlights & Changelog
 
-- **VoltageOS 6.1 (Android 17)**: Smooth UI, custom power settings, and refined thermal controls.
-- **Non-Root Build**: Pure stock kernel configuration.
-- **Sandboxed GApps**: Privacy-friendly Sandboxed Google Apps edition included.
-- **Hardware Integration**: 120Hz dynamic refresh rate, Sony LYT-700C camera sensor pipeline, UDFPS, Fast Charging 68W, and Hi-Res wireless audio codecs.
+### 📱 Device Specific:
+- Initial release for Motorola Edge 50 (`tank`).
+- Non-Root build with pure stock kernel configuration.
+- Sandboxed Google Apps edition included.
+- 120Hz dynamic refresh rate, Sony LYT-700C camera sensor pipeline, UDFPS, Fast Charging 68W, and Hi-Res wireless audio codecs.
+
+### ⚡ VoltageOS (September 2026 ASB):
+- Fixed App Drawer zoom toggle.
+- Fixed workspace items appearing behind the App Drawer when blur is disabled.
+- Fixed lockscreen clock thickness option.
+- Fixed Bluetooth icon disappearing after restarting SystemUI.
+- Fixed blurred background of the default UDPFS icon and notification shelf.
+- Fixed GameSpace screen recording.
+- Fixed some issues related to Call overlay in GameSpace.
+- Added event-based PSA strings to QuickSpace.
+- Added Voltage vertical style to QuickSpace.
+- Added calendar support to QuickSpace.
+- Added answer-on-speaker toggle in GameSpace.
+- Added blur to SystemUI and power menu dialogs.
+- Improved per-app volume.
+- Improved dynamic fonts.
+- Improved mobile data and Bluetooth QS dialogs.
+- Stopped limiting App Drawer search results.
 
 ---
 
