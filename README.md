@@ -2,15 +2,14 @@
 
 <div align="center">
 
-![VoltageOS Banner](https://raw.githubusercontent.com/ajimsjames/voltageos_tank_releases/main/assets/banner.png)
-
 [![Android 17](https://img.shields.io/badge/Android-17.0-blue.svg?style=for-the-badge&logo=android)](https://www.android.com/)
 [![VoltageOS](https://img.shields.io/badge/VoltageOS-v6.1-cyan.svg?style=for-the-badge&logo=lightning)](https://github.com/VoltageOS)
 [![Device](https://img.shields.io/badge/Device-Motorola_Edge_50_(tank)-purple.svg?style=for-the-badge&logo=motorola)](https://github.com/ajimsjames/android_device_motorola_tank)
-[![Maintainer](https://img.shields.io/badge/Maintainer-ajimsjames-green.svg?style=for-the-badge&logo=github)](https://github.com/ajimsjames)
+[![Build Type](https://img.shields.io/badge/Build-Non--Root_Official-green.svg?style=for-the-badge&logo=googleplay)](https://github.com/ajimsjames/voltageos_tank_releases)
+[![Maintainer](https://img.shields.io/badge/Maintainer-ajimsjames-emerald.svg?style=for-the-badge&logo=github)](https://github.com/ajimsjames)
 [![Website](https://img.shields.io/badge/Release_Portal-Live-00f0ff.svg?style=for-the-badge&logo=google-chrome)](https://ajimsjames.github.io/voltageos_tank_releases/)
 
-**⚡ Pure Performance. Cybernetic Elegance. Android 17. ⚡**
+**⚡ Pure Performance. Cybernetic Elegance. Android 17 (Non-Root / Pure Stock Security). ⚡**
 
 [🌐 **Visit Release Website & Interactive Download Portal**](https://ajimsjames.github.io/voltageos_tank_releases/)
 
@@ -32,22 +31,22 @@
 | **Battery & Charging** | 5000 mAh, 68W TurboPower wired, 15W wireless |
 | **Security / Biometrics**| Under-display Optical Fingerprint (Goodix UDFPS), Face Unlock |
 | **Audio & Codecs** | Stereo Speakers, Dolby Atmos, LDAC (990kbps), aptX HD / Adaptive, LHDC v5 |
-| **Kernel / Root** | KernelSU-Next Pre-integrated (`CONFIG_KSU=y`) |
+| **Kernel / Root** | **Pure Non-Root Stock Kernel** (SELinux Enforcing, Banking & Play Integrity 100% Ready) |
 
 ---
 
 ## ⚡ Key Highlights & Features
 
-- **VoltageOS 6.1**: Powered by Android 17 with buttery smooth UI, electric customization engine, and performance governor tuning.
-- **KernelSU-Next Support**: Built with root-level hook support for KernelSU-Next without tripping Play Integrity.
-- **Full Hardware Support**: 120Hz dynamic refresh rate, Sony LYT-700C camera sensor pipeline, UDFPS, Fast Charging 68W, and Hi-Res wireless audio codecs.
-- **SafetyNet / Play Integrity**: Passes Basic & Device Integrity out of the box.
+- **VoltageOS 6.1 (Android 17)**: Silky smooth UI, customized power settings, and advanced thermal profiles.
+- **Non-Root & Uncompromised Security**: Pure stock kernel configuration without root hooks—banking apps, UPI, and work profiles work seamlessly out of the box.
+- **Play Integrity Passed**: Passes Google Play Integrity (Device & Basic Integrity) out-of-the-box.
+- **Complete Hardware Support**: 120Hz dynamic refresh rate, Sony LYT-700C camera sensor pipeline, UDFPS, Fast Charging 68W, and Hi-Res wireless audio codecs.
 
 ---
 
 ## 📥 Download Links
 
-You can browse all builds, mirrors, changelogs, and fastboot images directly on our [**Interactive Release Portal**](https://ajimsjames.github.io/voltageos_tank_releases/).
+Browse all builds, mirrors, changelogs, and fastboot images directly on our [**Interactive Release Portal**](https://ajimsjames.github.io/voltageos_tank_releases/).
 
 - **GitHub Releases**: [Releases Page](https://github.com/ajimsjames/voltageos_tank_releases/releases)
 
@@ -116,7 +115,6 @@ To build VoltageOS 6.1 for Motorola Edge 50 (`tank`):
 
 - **Device Maintainer**: [AJIMS JAMES](https://github.com/ajimsjames)
 - **VoltageOS Team**: [VoltageOS GitHub](https://github.com/VoltageOS)
-- **KernelSU-Next**: [KernelSU-Next](https://github.com/KernelSU-Next/KernelSU-Next)
 - **Motorola Mobility LLC**: For kernel sources and device components
 
 ---
