@@ -659,26 +659,51 @@
             <div class="p-4 rounded-xl bg-purple-950/30 border border-purple-500/30 text-purple-300 text-xs font-mono flex items-start gap-3">
               <i class="fa-solid fa-bolt text-base mt-0.5"></i>
               <div>
-                <strong>FASTBOOTD METHOD:</strong> Flash via fastbootd using extracted partitions or fastboot package.
+                <strong>FASTBOOTD METHOD:</strong> Full partition flashing via fastboot and fastbootd (requires extracted images).
               </div>
             </div>
 
-            <div class="space-y-3 font-mono text-xs">
-              <div class="flex items-center justify-between">
-                <span class="text-slate-400">Execute in fastboot mode:</span>
-                <button onclick="copyText('fastboot reboot fastboot\nfastboot flash boot boot.img\nfastboot flash vendor_boot vendor_boot.img\nfastboot flash dtbo dtbo.img\nfastboot flash --slot=all -w')" class="text-slate-400 hover:text-cyan-400">
-                  <i class="fa-regular fa-copy mr-1"></i> Copy Commands
-                </button>
-              </div>
-              <div class="bg-black/80 p-4 rounded-xl text-slate-300 border border-slate-800 space-y-1">
-                <div>fastboot reboot fastboot</div>
-                <div>fastboot flash boot boot.img</div>
-                <div>fastboot flash vendor_boot vendor_boot.img</div>
-                <div>fastboot flash dtbo dtbo.img</div>
-                <div>fastboot -w</div>
-                <div>fastboot reboot</div>
-              </div>
-            </div>
+            <ol class="space-y-4 font-mono text-xs">
+              <li class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
+                <span class="font-bold text-purple-400 block">1. Flash Boot & Recovery Partitions (Bootloader Mode)</span>
+                <div class="bg-black/80 p-3 rounded-lg text-slate-300 border border-slate-800 space-y-1 select-all">
+                  <div>fastboot flash boot boot.img</div>
+                  <div>fastboot flash vendor_boot vendor_boot.img</div>
+                  <div>fastboot flash dtbo dtbo.img</div>
+                </div>
+              </li>
+
+              <li class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
+                <span class="font-bold text-purple-400 block">2. Reboot to Fastbootd Mode</span>
+                <div class="bg-black/80 p-3 rounded-lg text-slate-300 border border-slate-800 select-all">
+                  fastboot reboot fastboot
+                </div>
+              </li>
+
+              <li class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-bold text-purple-400">3. Flash Dynamic Logical Partitions (Fastbootd Mode)</span>
+                  <button onclick="copyText('fastboot flash system system.img\nfastboot flash system_ext system_ext.img\nfastboot flash product product.img\nfastboot flash vendor vendor.img\nfastboot flash vendor_dlkm vendor_dlkm.img')" class="text-slate-400 hover:text-cyan-400 text-xs">
+                    <i class="fa-regular fa-copy mr-1"></i> Copy
+                  </button>
+                </div>
+                <div class="bg-black/80 p-3 rounded-lg text-slate-300 border border-slate-800 space-y-1">
+                  <div>fastboot flash system system.img</div>
+                  <div>fastboot flash system_ext system_ext.img</div>
+                  <div>fastboot flash product product.img</div>
+                  <div>fastboot flash vendor vendor.img</div>
+                  <div>fastboot flash vendor_dlkm vendor_dlkm.img</div>
+                </div>
+              </li>
+
+              <li class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
+                <span class="font-bold text-purple-400 block">4. Wipe Userdata & Reboot</span>
+                <div class="bg-black/80 p-3 rounded-lg text-slate-300 border border-slate-800 space-y-1 select-all">
+                  <div>fastboot -w</div>
+                  <div>fastboot reboot</div>
+                </div>
+              </li>
+            </ol>
           </div>
 
         </div>
