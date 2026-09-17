@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report an Issue // VoltageOS 6.1 (tank)</title>
+  <meta name="description" content="File a bug report or feature request for VoltageOS 6.1 on Motorola Edge 50 (tank).">
+  <meta name="theme-color" content="#0d0c08">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Report Issue | VoltageOS 6.1 Motorola Edge 50 (tank)">
+  <meta property="og:description" content="Submit bug reports, crash logs, or feature requests directly to GitHub Issues.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ajimsjames.github.io/voltageos_tank_releases/issues.html">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            orbitron: ['Orbitron', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            thunder: {
+              bg: '#080806',
+              card: '#0f0e0a',
+              cardBorder: '#262214',
+              gold: '#ffd700',
+              yellow: '#ffea00',
+              amber: '#ff9900',
+              surface: '#14130d'
+            }
+          },
+          boxShadow: {
+            'neon-thunder': '0 0 25px -4px rgba(255, 215, 0, 0.45)',
+            'neon-amber': '0 0 25px -4px rgba(255, 153, 0, 0.45)',
+            'glow-card': '0 8px 32px 0 rgba(0, 0, 0, 0.45)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Electric Yellow Custom Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #080806; }
+    ::-webkit-scrollbar-thumb { background: #262214; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #ffd700; }
+
+    /* Thunder Grid Background */
+    .bg-thunder-grid {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 215, 0, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 215, 0, 0.04) 1px, transparent 1px);
+    }
+
+    .glass-panel {
+      background: rgba(15, 14, 10, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 215, 0, 0.12);
+    }
+
+    .glass-panel-hover:hover {
+      border-color: rgba(255, 215, 0, 0.5);
+      box-shadow: 0 0 30px -6px rgba(255, 215, 0, 0.35);
+    }
+
+    .glow-text-thunder {
+      text-shadow: 0 0 16px rgba(255, 215, 0, 0.7);
+    }
+
+    @keyframes pulse-slow {
+      0%, 100% { opacity: 0.25; transform: scale(1); }
+      50% { opacity: 0.55; transform: scale(1.08); }
+    }
+
+    .animate-pulse-slow {
+      animation: pulse-slow 7s infinite ease-in-out;
+    }
+  </style>
+</head>
+
+<body class="bg-[#080806] text-amber-50 antialiased selection:bg-[#ffd700] selection:text-black min-h-screen relative overflow-x-hidden">
+
+  <!-- Ambient Electric Lighting Effects -->
+  <div class="fixed top-[-10%] left-[-10%] w-[550px] h-[550px] bg-yellow-500/15 rounded-full blur-[140px] pointer-events-none animate-pulse-slow"></div>
+  <div class="fixed bottom-[10%] right-[-10%] w-[600px] h-[600px] bg-amber-600/15 rounded-full blur-[160px] pointer-events-none animate-pulse-slow" style="animation-delay: 3.5s;"></div>
+
+  <!-- Background Thunder Grid -->
+  <div class="fixed inset-0 bg-thunder-grid pointer-events-none z-0"></div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-3 px-5 py-3 rounded-xl bg-neutral-900/90 text-white border border-yellow-500/50 shadow-neon-thunder backdrop-blur-md">
+    <i class="fa-solid fa-bolt-lightning text-yellow-400 text-lg"></i>
+    <span id="toast-message" class="text-sm font-medium">Copied to clipboard!</span>
+  </div>
+
+  <div class="relative z-10 flex flex-col min-h-screen">
+    
+    <!-- Top Thunder HUD Navbar -->
+    <header class="sticky top-0 z-40 border-b border-yellow-900/30 bg-[#080806]/85 backdrop-blur-xl">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        
+        <!-- Brand Logo -->
+        <a href="index.html" class="flex items-center gap-3.5 group">
+          <div class="relative w-11 h-11 rounded-xl bg-gradient-to-br from-yellow-400 via-amber-500 to-yellow-600 p-[1px] shadow-neon-thunder group-hover:scale-105 transition-transform duration-300">
+            <div class="w-full h-full bg-[#0d0c08] rounded-xl flex items-center justify-center">
+              <i class="fa-solid fa-bolt-lightning text-yellow-400 text-xl group-hover:text-yellow-300 transition-colors"></i>
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-orbitron font-extrabold text-xl tracking-wider bg-gradient-to-r from-yellow-300 via-amber-400 to-yellow-500 bg-clip-text text-transparent">VOLTAGE<span class="text-yellow-400">OS</span></span>
+              <span class="px-2 py-0.5 text-[10px] font-mono uppercase tracking-widest rounded bg-yellow-950/80 text-yellow-400 border border-yellow-500/40">v6.1</span>
+            </div>
+            <p class="text-xs text-amber-200/60 font-mono">Motorola Edge 50 // <span class="text-amber-100 font-semibold">tank</span></p>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-1 font-mono text-xs">
+          <a href="index.html#releases" class="px-4 py-2 rounded-lg text-amber-100/80 hover:text-yellow-400 hover:bg-yellow-950/30 transition-all flex items-center gap-2">
+            <i class="fa-solid fa-layer-group text-yellow-600"></i> Releases
+          </a>
+          <a href="index.html#build-info" class="px-4 py-2 rounded-lg text-amber-100/80 hover:text-yellow-400 hover:bg-yellow-950/30 transition-all flex items-center gap-2">
+            <i class="fa-solid fa-circle-info text-yellow-600"></i> Build & Kernel
+          </a>
+          <a href="index.html#flashing" class="px-4 py-2 rounded-lg text-amber-100/80 hover:text-yellow-400 hover:bg-yellow-950/30 transition-all flex items-center gap-2">
+            <i class="fa-solid fa-terminal text-yellow-600"></i> Flashing Guide
+          </a>
+          <a href="index.html#specs" class="px-4 py-2 rounded-lg text-amber-100/80 hover:text-yellow-400 hover:bg-yellow-950/30 transition-all flex items-center gap-2">
+            <i class="fa-solid fa-microchip text-yellow-600"></i> Specs
+          </a>
+          <a href="issues.html" class="px-4 py-2 rounded-lg bg-yellow-500/20 text-yellow-400 border border-yellow-500/40 font-semibold transition-all flex items-center gap-2">
+            <i class="fa-solid fa-bug text-yellow-400"></i> Report Issue
+          </a>
+        </nav>
+
+        <!-- Action / External Hub -->
+        <div class="flex items-center gap-3">
+          <a href="https://github.com/ajimsjames/voltageos_tank_releases/issues" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-[#14130d] hover:bg-[#1a1810] border border-yellow-900/40 text-amber-100 text-xs font-mono font-medium flex items-center gap-2 transition-all hover:border-yellow-500/50">
+            <i class="fa-brands fa-github text-sm text-yellow-400"></i>
+            <span class="hidden sm:inline">View GitHub Issues</span>
+          </a>
+          <a href="index.html#releases" class="px-4 py-2 rounded-xl bg-gradient-to-r from-yellow-400 to-amber-500 text-neutral-950 font-bold text-xs tracking-wide shadow-neon-thunder hover:opacity-95 transition-all flex items-center gap-1.5">
+            <i class="fa-solid fa-download"></i>
+            <span>GET ROM</span>
+          </a>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- MAIN FORM SECTION -->
+    <main class="flex-grow max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
+      
+      <!-- Breadcrumb & Header -->
+      <div class="mb-8 space-y-3">
+        <div class="flex items-center gap-2 font-mono text-xs text-amber-400/70">
+          <a href="index.html" class="hover:text-yellow-400 transition-colors">Portal Home</a>
+          <span>/</span>
+          <span class="text-yellow-400 font-bold">Issue Tracker</span>
+        </div>
+        <h1 class="font-orbitron text-3xl sm:text-4xl font-extrabold text-white flex items-center gap-3">
+          <i class="fa-solid fa-bug text-yellow-400"></i>
+          <span>FILE AN ISSUE // BUG REPORT</span>
+        </h1>
+        <p class="text-sm text-amber-200/80 font-mono leading-relaxed">
+          Submit bug reports, unexpected reboot logs, or feature feedback directly to the <a href="https://github.com/ajimsjames/voltageos_tank_releases/issues" target="_blank" class="text-yellow-400 underline hover:text-yellow-300">GitHub Issues</a> repository for Motorola Edge 50 (<code class="text-yellow-400">tank</code>).
+        </p>
+      </div>
+
+      <!-- Quick Guidance Notice -->
+      <div class="p-4 rounded-xl bg-yellow-950/30 border border-yellow-500/30 text-xs font-mono text-amber-200/90 flex items-start gap-3 mb-8">
+        <i class="fa-solid fa-triangle-exclamation text-yellow-400 text-base mt-0.5 flex-shrink-0"></i>
+        <div class="space-y-1">
+          <p class="font-bold text-yellow-400">Tips for an effective bug report:</p>
+          <ul class="list-disc list-inside space-y-0.5 text-amber-100/80">
+            <li>Ensure you are running the latest build on a clean flash before reporting.</li>
+            <li>For random reboots, system UI crashes, or audio/camera bugs, attaching a <strong>logcat</strong> or <code>dmesg</code> snippet drastically speeds up debugging.</li>
+            <li>Fill out the form below. Clicking <strong>"Submit to GitHub Issues"</strong> will format your submission and open it on GitHub ready to be published.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Issue Form Container -->
+      <div class="glass-panel rounded-2xl p-6 sm:p-8 border border-yellow-900/40 shadow-glow-card">
+        <form id="issueForm" onsubmit="handleIssueSubmit(event)" class="space-y-6">
+          
+          <!-- Issue Type Selection -->
+          <div>
+            <label class="block font-mono text-xs font-bold uppercase tracking-wider text-yellow-400 mb-2">
+              <i class="fa-solid fa-list-check mr-1.5"></i> Issue Type <span class="text-red-400">*</span>
+            </label>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <label class="cursor-pointer">
+                <input type="radio" name="issueType" value="bug" checked class="peer sr-only">
+                <div class="p-3.5 rounded-xl bg-[#14130d] border border-yellow-900/40 peer-checked:border-yellow-400 peer-checked:bg-yellow-950/40 transition-all text-center">
+                  <i class="fa-solid fa-bug text-yellow-400 text-lg mb-1 block"></i>
+                  <span class="font-mono text-xs font-bold text-white block">Bug Report</span>
+                  <span class="font-mono text-[10px] text-amber-400/60">Malfunctions & Glitches</span>
+                </div>
+              </label>
+
+              <label class="cursor-pointer">
+                <input type="radio" name="issueType" value="crash" class="peer sr-only">
+                <div class="p-3.5 rounded-xl bg-[#14130d] border border-yellow-900/40 peer-checked:border-yellow-400 peer-checked:bg-yellow-950/40 transition-all text-center">
+                  <i class="fa-solid fa-skull-crossbones text-amber-400 text-lg mb-1 block"></i>
+                  <span class="font-mono text-xs font-bold text-white block">Crash / Panic</span>
+                  <span class="font-mono text-[10px] text-amber-400/60">System UI / Kernel Panic</span>
+                </div>
+              </label>
+
+              <label class="cursor-pointer">
+                <input type="radio" name="issueType" value="feature" class="peer sr-only">
+                <div class="p-3.5 rounded-xl bg-[#14130d] border border-yellow-900/40 peer-checked:border-yellow-400 peer-checked:bg-yellow-950/40 transition-all text-center">
+                  <i class="fa-solid fa-lightbulb text-yellow-400 text-lg mb-1 block"></i>
+                  <span class="font-mono text-xs font-bold text-white block">Feature Request</span>
+                  <span class="font-mono text-[10px] text-amber-400/60">Improvements & Tweaks</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Issue Title -->
+          <div>
+            <label for="issueTitle" class="block font-mono text-xs font-bold uppercase tracking-wider text-yellow-400 mb-2">
+              <i class="fa-solid fa-heading mr-1.5"></i> Title / Summary <span class="text-red-400">*</span>
+            </label>
+            <input 
+              type="text" 
+              id="issueTitle" 
+              required
+              placeholder="e.g. [Bluetooth] Audio stuttering when connected to LDAC headset"
+              class="w-full px-4 py-3 rounded-xl bg-[#14130d] border border-yellow-900/50 focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 text-sm font-mono text-white placeholder-amber-200/30 outline-none transition-all"
+            >
+          </div>
+
+          <!-- Device & ROM Environment (Pre-filled for tank) -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="deviceModel" class="block font-mono text-xs font-bold uppercase tracking-wider text-yellow-400 mb-2">
+                <i class="fa-solid fa-mobile-screen mr-1.5"></i> Device
+              </label>
+              <input 
+                type="text" 
+                id="deviceModel" 
+                value="Motorola Edge 50 (tank / SM7450)" 
+                readonly
+                class="w-full px-4 py-3 rounded-xl bg-[#0d0c08] border border-yellow-900/30 text-sm font-mono text-amber-200/80 outline-none cursor-not-allowed"
+              >
+            </div>
+
+            <div>
+              <label for="buildDate" class="block font-mono text-xs font-bold uppercase tracking-wider text-yellow-400 mb-2">
+                <i class="fa-solid fa-code-commit mr-1.5"></i> VoltageOS Build Date / Tag <span class="text-red-400">*</span>
+              </label>
+              <input 
+                type="text" 
+                id="buildDate" 
+                required
+                value="v6.1-tank-20260917 (20260916-1602)" 
+                class="w-full px-4 py-3 rounded-xl bg-[#14130d] border border-yellow-900/50 focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 text-sm font-mono text-white outline-none transition-all"
+              >
+            </div>
+          </div>
+
+          <!-- Root / Custom Modifications -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="flashMethod" class="block font-mono text-xs font-bold uppercase tracking-wider text-yellow-400 mb-2">
+                <i class="fa-solid fa-arrows-rotate mr-1.5"></i> Flash Method <span class="text-red-400">*</span>
+              </label>
+              <select 
+                id="flashMethod" 
+                class="w-full px-4 py-3 rounded-xl bg-[#14130d] border border-yellow-900/50 focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 text-sm font-mono text-white outline-none transition-all"
+              >
+                <option value="Clean Flash (Formatted Data)">Clean Flash (Formatted Data via Recovery)</option>
+                <option value="Dirty Flash (Updated from prior VoltageOS build)">Dirty Flash (Updated over prior build)</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="modsInstalled" class="block font-mono text-xs font-bold uppercase tracking-wider text-yellow-400 mb-2">
+                <i class="fa-solid fa-puzzle-piece mr-1.5"></i> Mods / Root Installed
+              </label>
+              <input 
+                type="text" 
+                id="modsInstalled" 
+                value="None (Pure Stock Non-Root)" 
+                placeholder="e.g. Magisk, KernelSU, None" 
+                class="w-full px-4 py-3 rounded-xl bg-[#14130d] border border-yellow-900/50 focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 text-sm font-mono text-white outline-none transition-all"
+              >
+            </div>
+          </div>
+
+          <!-- Problem Description -->
+          <div>
+            <label for="issueDesc" class="block font-mono text-xs font-bold uppercase tracking-wider text-yellow-400 mb-2">
+              <i class="fa-solid fa-file-lines mr-1.5"></i> Description of Bug / Request <span class="text-red-400">*</span>
+            </label>
+            <textarea 
+              id="issueDesc" 
+              rows="4" 
+              required
+              placeholder="Provide a clear and concise description of the issue you encountered..." 
+              class="w-full px-4 py-3 rounded-xl bg-[#14130d] border border-yellow-900/50 focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 text-sm font-mono text-white placeholder-amber-200/30 outline-none transition-all"
+            ></textarea>
+          </div>
+
+          <!-- Steps to Reproduce -->
+          <div>
+            <label for="stepsToReproduce" class="block font-mono text-xs font-bold uppercase tracking-wider text-yellow-400 mb-2">
+              <i class="fa-solid fa-list-ol mr-1.5"></i> Steps to Reproduce
+            </label>
+            <textarea 
+              id="stepsToReproduce" 
+              rows="3" 
+              placeholder="1. Go to Settings > Sound&#10;2. Connect Bluetooth device&#10;3. Observe crash or failure" 
+              class="w-full px-4 py-3 rounded-xl bg-[#14130d] border border-yellow-900/50 focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 text-sm font-mono text-white placeholder-amber-200/30 outline-none transition-all"
+            ></textarea>
+          </div>
+
+          <!-- Expected vs Actual Behavior -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="expectedBehavior" class="block font-mono text-xs font-bold uppercase tracking-wider text-yellow-400 mb-2">
+                <i class="fa-regular fa-circle-check mr-1.5"></i> Expected Behavior
+              </label>
+              <textarea 
+                id="expectedBehavior" 
+                rows="2" 
+                placeholder="What did you expect to happen?" 
+                class="w-full px-4 py-3 rounded-xl bg-[#14130d] border border-yellow-900/50 focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 text-sm font-mono text-white placeholder-amber-200/30 outline-none transition-all"
+              ></textarea>
+            </div>
+
+            <div>
+              <label for="actualBehavior" class="block font-mono text-xs font-bold uppercase tracking-wider text-yellow-400 mb-2">
+                <i class="fa-regular fa-circle-xmark mr-1.5"></i> Actual Behavior
+              </label>
+              <textarea 
+                id="actualBehavior" 
+                rows="2" 
+                placeholder="What actually happened instead?" 
+                class="w-full px-4 py-3 rounded-xl bg-[#14130d] border border-yellow-900/50 focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 text-sm font-mono text-white placeholder-amber-200/30 outline-none transition-all"
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- Logs / Logcat Snippet -->
+          <div>
+            <label for="logcatSnippet" class="block font-mono text-xs font-bold uppercase tracking-wider text-yellow-400 mb-2 flex items-center justify-between">
+              <span><i class="fa-solid fa-terminal mr-1.5"></i> Logcat / Dmesg / Crash Stacktrace (Optional)</span>
+              <span class="text-[10px] text-amber-400/60 font-normal">Paste snippet or attach file on GitHub</span>
+            </label>
+            <textarea 
+              id="logcatSnippet" 
+              rows="4" 
+              placeholder="Paste relevant lines from adb logcat or crash dump here..." 
+              class="w-full px-4 py-3 rounded-xl bg-[#14130d] border border-yellow-900/50 focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400 text-xs font-mono text-amber-100 placeholder-amber-200/30 outline-none transition-all"
+            ></textarea>
+          </div>
+
+          <!-- Submit Controls -->
+          <div class="pt-4 border-t border-yellow-900/40 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="text-xs font-mono text-amber-200/60 flex items-center gap-2">
+              <i class="fa-solid fa-lock text-yellow-400"></i>
+              <span>Opens in GitHub with your formatted report</span>
+            </div>
+
+            <div class="flex items-center gap-3 w-full sm:w-auto">
+              <button 
+                type="button" 
+                onclick="copyIssueMarkdown()" 
+                class="w-full sm:w-auto px-5 py-3 rounded-xl bg-[#14130d] hover:bg-[#1c1a10] border border-yellow-900/50 hover:border-yellow-500/50 text-amber-100 font-mono text-xs font-semibold transition-all flex items-center justify-center gap-2"
+              >
+                <i class="fa-regular fa-copy text-yellow-400"></i>
+                <span>Copy Markdown</span>
+              </button>
+
+              <button 
+                type="submit" 
+                class="w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 hover:from-yellow-300 hover:to-amber-300 text-neutral-950 font-orbitron font-extrabold text-xs tracking-wider shadow-neon-thunder transition-all flex items-center justify-center gap-2"
+              >
+                <i class="fa-brands fa-github text-sm"></i>
+                <span>SUBMIT TO GITHUB</span>
+              </button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+    </main>
+
+    <!-- FOOTER HUD -->
+    <footer class="mt-20 border-t border-yellow-900/40 bg-[#080806]/95 backdrop-blur-xl">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+          
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-yellow-400 to-amber-500 flex items-center justify-center text-neutral-950 font-bold shadow-neon-thunder">
+              <i class="fa-solid fa-bolt text-sm"></i>
+            </div>
+            <div>
+              <span class="font-orbitron font-bold text-sm text-white">VOLTAGEOS 6.1 </span>
+              <p class="font-mono text-xs text-amber-400/70">Motorola Edge 50 (<span class="text-yellow-400">tank</span>) // UNOFFICIAL by <a href="https://github.com/ajimsjames" class="text-yellow-400 hover:underline">ajugeorge</a></p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4 text-amber-400/80 text-sm">
+            <a href="index.html" class="font-mono text-xs hover:text-yellow-400 transition-colors mr-2">
+              <i class="fa-solid fa-house mr-1"></i> Home
+            </a>
+            <a href="https://github.com/ajimsjames/voltageos_tank_releases" target="_blank" title="GitHub Repo" class="hover:text-yellow-400 transition-colors">
+              <i class="fa-brands fa-github text-lg"></i>
+            </a>
+            <a href="https://github.com/VoltageOS" target="_blank" title="VoltageOS Source" class="hover:text-yellow-400 transition-colors">
+              <i class="fa-solid fa-bolt text-lg"></i>
+            </a>
+          </div>
+
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-yellow-900/30 text-center font-mono text-[11px] text-amber-500/50">
+          VoltageOS is an open-source Android after-market firmware. All device trademarks are property of Motorola Mobility LLC.
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Form Submission & Markdown Compilation Logic -->
+  <script>
+    function buildMarkdown() {
+      const type = document.querySelector('input[name="issueType"]:checked').value;
+      const title = document.getElementById('issueTitle').value.trim();
+      const device = document.getElementById('deviceModel').value;
+      const buildDate = document.getElementById('buildDate').value.trim();
+      const flashMethod = document.getElementById('flashMethod').value;
+      const mods = document.getElementById('modsInstalled').value.trim();
+      const desc = document.getElementById('issueDesc').value.trim();
+      const steps = document.getElementById('stepsToReproduce').value.trim();
+      const expected = document.getElementById('expectedBehavior').value.trim();
+      const actual = document.getElementById('actualBehavior').value.trim();
+      const logcat = document.getElementById('logcatSnippet').value.trim();
+
+      const typeLabel = type === 'bug' ? '[BUG]' : type === 'crash' ? '[CRASH]' : '[FEATURE]';
+
+      let md = `### 📱 Device & ROM Information\n`;
+      md += `- **Device**: ${device}\n`;
+      md += `- **Build Version / Date**: ${buildDate}\n`;
+      md += `- **Flash Method**: ${flashMethod}\n`;
+      md += `- **Root / Mods**: ${mods || 'None'}\n\n`;
+
+      md += `### 📝 Description\n${desc || 'N/A'}\n\n`;
+
+      if (steps) {
+        md += `### 🔄 Steps to Reproduce\n${steps}\n\n`;
+      }
+
+      if (expected || actual) {
+        md += `### ⚖️ Expected vs Actual Behavior\n`;
+        if (expected) md += `- **Expected**: ${expected}\n`;
+        if (actual) md += `- **Actual**: ${actual}\n`;
+        md += `\n`;
+      }
+
+      if (logcat) {
+        md += `### 📋 Logs / Logcat Snippet\n\`\`\`\n${logcat}\n\`\`\`\n\n`;
+      }
+
+      md += `---\n*Reported via [VoltageOS Tank Portal](https://ajimsjames.github.io/voltageos_tank_releases/issues.html)*`;
+
+      return {
+        typeLabel,
+        fullTitle: title ? `${typeLabel} ${title}` : `${typeLabel} Issue report on ${buildDate}`,
+        body: md
+      };
+    }
+
+    function handleIssueSubmit(e) {
+      e.preventDefault();
+      const data = buildMarkdown();
+      const repoUrl = 'https://github.com/ajimsjames/voltageos_tank_releases/issues/new';
+      const targetUrl = `${repoUrl}?title=${encodeURIComponent(data.fullTitle)}&body=${encodeURIComponent(data.body)}`;
+      
+      showToast('Redirecting to GitHub Issues...');
+      setTimeout(() => {
+        window.open(targetUrl, '_blank');
+      }, 500);
+    }
+
+    function copyIssueMarkdown() {
+      const data = buildMarkdown();
+      navigator.clipboard.writeText(data.body).then(() => {
+        showToast('Issue markdown copied to clipboard!');
+      }).catch(() => {
+        showToast('Failed to copy. Check browser permissions.');
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-message');
+      toastMsg.innerText = msg;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 2500);
+    }
+  </script>
+
+</body>
+</html>
