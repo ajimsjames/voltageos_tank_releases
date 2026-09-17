@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VoltageOS 6.1 // Motorola Edge 50 (tank)</title>
-  <meta name="description" content="VoltageOS 6.1 (Android 17) Release Hub for Motorola Edge 50 (tank / SM7450). UNOFFICIAL by ajugeorge. Non-Root, Sandboxed GApps edition.">
-  <meta name="theme-color" content="#080c14">
+  <meta name="description" content="VoltageOS 6.1 (Android 17) Release Hub for Motorola Edge 50 (tank / SM7450). Zenitsu Yellow Thunder Edition. UNOFFICIAL by ajugeorge. Non-Root, Sandboxed GApps.">
+  <meta name="theme-color" content="#0d0c08">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="VoltageOS 6.1 | Motorola Edge 50 (tank)">
-  <meta property="og:description" content="Futuristic Android 17 custom ROM for Motorola Edge 50. UNOFFICIAL by ajugeorge. Non-Root / Sandboxed GApps builds, changelogs, and flashing guides.">
+  <meta property="og:title" content="VoltageOS 6.1 | Motorola Edge 50 (tank) // Yellow Thunder">
+  <meta property="og:description" content="Electrified Android 17 custom ROM for Motorola Edge 50. Zenitsu Yellow Thunder Edition. Non-Root / Sandboxed GApps builds, changelogs, and flashing guides.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ajimsjames.github.io/voltageos_tank_releases/">
 
@@ -34,22 +34,20 @@
             mono: ['JetBrains Mono', 'monospace'],
           },
           colors: {
-            cyber: {
-              bg: '#06080e',
-              card: '#0b101b',
-              cardBorder: '#1e293b',
-              accent: '#00f0ff',
-              neonPurple: '#a855f7',
-              neonPink: '#ec4899',
-              neonGreen: '#10b981',
-              neonAmber: '#f59e0b',
-              surface: '#0f172a'
+            thunder: {
+              bg: '#080806',
+              card: '#0f0e0a',
+              cardBorder: '#262214',
+              gold: '#ffd700',
+              yellow: '#ffea00',
+              amber: '#ff9900',
+              surface: '#14130d'
             }
           },
           boxShadow: {
-            'neon-cyan': '0 0 25px -5px rgba(0, 240, 255, 0.4)',
-            'neon-purple': '0 0 25px -5px rgba(168, 85, 247, 0.4)',
-            'glow-card': '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
+            'neon-thunder': '0 0 25px -4px rgba(255, 215, 0, 0.45)',
+            'neon-amber': '0 0 25px -4px rgba(255, 153, 0, 0.45)',
+            'glow-card': '0 8px 32px 0 rgba(0, 0, 0, 0.45)'
           }
         }
       }
@@ -57,115 +55,111 @@
   </script>
 
   <style>
-    /* Custom Futuristic Scrollbar */
+    /* Zenitsu Yellow Thunder Custom Scrollbar */
     ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #06080e; }
-    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: #00f0ff; }
+    ::-webkit-scrollbar-track { background: #080806; }
+    ::-webkit-scrollbar-thumb { background: #262214; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #ffd700; }
 
-    /* Futuristic Grid Background */
-    .bg-cyber-grid {
+    /* Thunder Grid Background */
+    .bg-thunder-grid {
       background-size: 40px 40px;
       background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        linear-gradient(to right, rgba(255, 215, 0, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 215, 0, 0.04) 1px, transparent 1px);
     }
 
     .glass-panel {
-      background: rgba(11, 16, 27, 0.75);
+      background: rgba(15, 14, 10, 0.85);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 215, 0, 0.12);
     }
 
     .glass-panel-hover:hover {
-      border-color: rgba(0, 240, 255, 0.4);
-      box-shadow: 0 0 30px -8px rgba(0, 240, 255, 0.25);
+      border-color: rgba(255, 215, 0, 0.5);
+      box-shadow: 0 0 30px -6px rgba(255, 215, 0, 0.35);
       transform: translateY(-2px);
     }
 
-    .glow-text-cyan {
-      text-shadow: 0 0 16px rgba(0, 240, 255, 0.6);
-    }
-
-    .glow-text-purple {
-      text-shadow: 0 0 16px rgba(168, 85, 247, 0.6);
+    .glow-text-thunder {
+      text-shadow: 0 0 16px rgba(255, 215, 0, 0.7);
     }
 
     @keyframes pulse-slow {
-      0%, 100% { opacity: 0.3; transform: scale(1); }
-      50% { opacity: 0.6; transform: scale(1.08); }
+      0%, 100% { opacity: 0.25; transform: scale(1); }
+      50% { opacity: 0.55; transform: scale(1.08); }
     }
 
     .animate-pulse-slow {
-      animation: pulse-slow 8s infinite ease-in-out;
+      animation: pulse-slow 7s infinite ease-in-out;
     }
   </style>
 </head>
 
-<body class="bg-[#06080e] text-slate-200 antialiased selection:bg-[#00f0ff] selection:text-black min-h-screen relative overflow-x-hidden">
+<body class="bg-[#080806] text-amber-50 antialiased selection:bg-[#ffd700] selection:text-black min-h-screen relative overflow-x-hidden">
 
-  <!-- Ambient Lighting Effects -->
-  <div class="fixed top-[-10%] left-[-10%] w-[550px] h-[550px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none animate-pulse-slow"></div>
-  <div class="fixed bottom-[10%] right-[-10%] w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[160px] pointer-events-none animate-pulse-slow" style="animation-delay: 4s;"></div>
+  <!-- Ambient Zenitsu Thunder Lighting Effects -->
+  <div class="fixed top-[-10%] left-[-10%] w-[550px] h-[550px] bg-yellow-500/15 rounded-full blur-[140px] pointer-events-none animate-pulse-slow"></div>
+  <div class="fixed bottom-[10%] right-[-10%] w-[600px] h-[600px] bg-amber-600/15 rounded-full blur-[160px] pointer-events-none animate-pulse-slow" style="animation-delay: 3.5s;"></div>
 
-  <!-- Background Cyber Grid -->
-  <div class="fixed inset-0 bg-cyber-grid pointer-events-none z-0"></div>
+  <!-- Background Thunder Grid -->
+  <div class="fixed inset-0 bg-thunder-grid pointer-events-none z-0"></div>
 
   <!-- Toast Notification Container -->
-  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-3 px-5 py-3 rounded-xl bg-slate-900/90 text-white border border-cyan-500/40 shadow-neon-cyan backdrop-blur-md">
-    <i class="fa-solid fa-circle-check text-cyan-400 text-lg"></i>
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-3 px-5 py-3 rounded-xl bg-neutral-900/90 text-white border border-yellow-500/50 shadow-neon-thunder backdrop-blur-md">
+    <i class="fa-solid fa-bolt-lightning text-yellow-400 text-lg"></i>
     <span id="toast-message" class="text-sm font-medium">Copied to clipboard!</span>
   </div>
 
   <div class="relative z-10 flex flex-col min-h-screen">
     
-    <!-- Top Cyber HUD Navbar -->
-    <header class="sticky top-0 z-40 border-b border-slate-800/80 bg-[#06080e]/80 backdrop-blur-xl">
+    <!-- Top Thunder HUD Navbar -->
+    <header class="sticky top-0 z-40 border-b border-yellow-900/30 bg-[#080806]/85 backdrop-blur-xl">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         
         <!-- Brand Logo -->
         <a href="#" class="flex items-center gap-3.5 group">
-          <div class="relative w-11 h-11 rounded-xl bg-gradient-to-br from-cyan-500 via-indigo-600 to-purple-600 p-[1px] shadow-neon-cyan group-hover:scale-105 transition-transform duration-300">
-            <div class="w-full h-full bg-[#070b14] rounded-xl flex items-center justify-center">
-              <i class="fa-solid fa-bolt-lightning text-cyan-400 text-xl group-hover:text-cyan-300 transition-colors"></i>
+          <div class="relative w-11 h-11 rounded-xl bg-gradient-to-br from-yellow-400 via-amber-500 to-yellow-600 p-[1px] shadow-neon-thunder group-hover:scale-105 transition-transform duration-300">
+            <div class="w-full h-full bg-[#0d0c08] rounded-xl flex items-center justify-center">
+              <i class="fa-solid fa-bolt-lightning text-yellow-400 text-xl group-hover:text-yellow-300 transition-colors"></i>
             </div>
           </div>
           <div>
             <div class="flex items-center gap-2">
-              <span class="font-orbitron font-extrabold text-xl tracking-wider bg-gradient-to-r from-cyan-400 via-purple-300 to-indigo-400 bg-clip-text text-transparent">VOLTAGE<span class="text-cyan-400">OS</span></span>
-              <span class="px-2 py-0.5 text-[10px] font-mono uppercase tracking-widest rounded bg-cyan-950/80 text-cyan-400 border border-cyan-500/30">v6.1</span>
+              <span class="font-orbitron font-extrabold text-xl tracking-wider bg-gradient-to-r from-yellow-300 via-amber-400 to-yellow-500 bg-clip-text text-transparent">VOLTAGE<span class="text-yellow-400">OS</span></span>
+              <span class="px-2 py-0.5 text-[10px] font-mono uppercase tracking-widest rounded bg-yellow-950/80 text-yellow-400 border border-yellow-500/40">v6.1</span>
             </div>
-            <p class="text-xs text-slate-400 font-mono">Motorola Edge 50 // <span class="text-slate-300 font-semibold">tank</span></p>
+            <p class="text-xs text-amber-200/60 font-mono">Motorola Edge 50 // <span class="text-amber-100 font-semibold">tank</span></p>
           </div>
         </a>
 
         <!-- Desktop Navigation Links -->
         <nav class="hidden md:flex items-center gap-1 font-mono text-xs">
-          <a href="#releases" class="px-4 py-2 rounded-lg text-slate-300 hover:text-cyan-400 hover:bg-slate-800/50 transition-all flex items-center gap-2">
-            <i class="fa-solid fa-layer-group text-slate-500"></i> Releases
+          <a href="#releases" class="px-4 py-2 rounded-lg text-amber-100/80 hover:text-yellow-400 hover:bg-yellow-950/30 transition-all flex items-center gap-2">
+            <i class="fa-solid fa-layer-group text-yellow-600"></i> Releases
           </a>
-          <a href="#build-info" class="px-4 py-2 rounded-lg text-slate-300 hover:text-cyan-400 hover:bg-slate-800/50 transition-all flex items-center gap-2">
-            <i class="fa-solid fa-circle-info text-slate-500"></i> Build & Kernel
+          <a href="#build-info" class="px-4 py-2 rounded-lg text-amber-100/80 hover:text-yellow-400 hover:bg-yellow-950/30 transition-all flex items-center gap-2">
+            <i class="fa-solid fa-circle-info text-yellow-600"></i> Build & Kernel
           </a>
-          <a href="#flashing" class="px-4 py-2 rounded-lg text-slate-300 hover:text-cyan-400 hover:bg-slate-800/50 transition-all flex items-center gap-2">
-            <i class="fa-solid fa-terminal text-slate-500"></i> Flashing Guide
+          <a href="#flashing" class="px-4 py-2 rounded-lg text-amber-100/80 hover:text-yellow-400 hover:bg-yellow-950/30 transition-all flex items-center gap-2">
+            <i class="fa-solid fa-terminal text-yellow-600"></i> Flashing Guide
           </a>
-          <a href="#specs" class="px-4 py-2 rounded-lg text-slate-300 hover:text-cyan-400 hover:bg-slate-800/50 transition-all flex items-center gap-2">
-            <i class="fa-solid fa-microchip text-slate-500"></i> Specs
+          <a href="#specs" class="px-4 py-2 rounded-lg text-amber-100/80 hover:text-yellow-400 hover:bg-yellow-950/30 transition-all flex items-center gap-2">
+            <i class="fa-solid fa-microchip text-yellow-600"></i> Specs
           </a>
-          <a href="#source" class="px-4 py-2 rounded-lg text-slate-300 hover:text-cyan-400 hover:bg-slate-800/50 transition-all flex items-center gap-2">
-            <i class="fa-solid fa-code-branch text-slate-500"></i> Manifest
+          <a href="#source" class="px-4 py-2 rounded-lg text-amber-100/80 hover:text-yellow-400 hover:bg-yellow-950/30 transition-all flex items-center gap-2">
+            <i class="fa-solid fa-code-branch text-yellow-600"></i> Manifest
           </a>
         </nav>
 
         <!-- Action / External Hub -->
         <div class="flex items-center gap-3">
-          <a href="https://github.com/ajimsjames/voltageos_tank_releases" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 text-xs font-mono font-medium flex items-center gap-2 transition-all hover:border-cyan-500/50">
-            <i class="fa-brands fa-github text-sm"></i>
+          <a href="https://github.com/ajimsjames/voltageos_tank_releases" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-[#14130d] hover:bg-[#1a1810] border border-yellow-900/40 text-amber-100 text-xs font-mono font-medium flex items-center gap-2 transition-all hover:border-yellow-500/50">
+            <i class="fa-brands fa-github text-sm text-yellow-400"></i>
             <span class="hidden sm:inline">GitHub</span>
           </a>
-          <a href="#releases" class="px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 font-semibold text-xs tracking-wide shadow-neon-cyan hover:opacity-95 hover:shadow-cyan-500/50 transition-all flex items-center gap-1.5">
+          <a href="#releases" class="px-4 py-2 rounded-xl bg-gradient-to-r from-yellow-400 to-amber-500 text-neutral-950 font-bold text-xs tracking-wide shadow-neon-thunder hover:opacity-95 transition-all flex items-center gap-1.5">
             <i class="fa-solid fa-download"></i>
             <span>GET ROM</span>
           </a>
@@ -177,9 +171,9 @@
     <!-- Main Content Container -->
     <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
 
-      <!-- Hero Cyber Matrix Banner -->
-      <section class="relative rounded-3xl overflow-hidden glass-panel border border-slate-800/80 p-8 sm:p-12">
-        <div class="absolute -right-20 -top-20 w-96 h-96 bg-gradient-to-bl from-cyan-500/20 via-purple-600/10 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+      <!-- Hero Cyber Matrix Banner (Zenitsu Yellow Thunder Edition) -->
+      <section class="relative rounded-3xl overflow-hidden glass-panel border border-yellow-500/20 p-8 sm:p-12">
+        <div class="absolute -right-20 -top-20 w-96 h-96 bg-gradient-to-bl from-yellow-500/20 via-amber-600/15 to-transparent rounded-full blur-3xl pointer-events-none"></div>
         
         <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
@@ -187,56 +181,56 @@
           <div class="lg:col-span-8 space-y-6">
             
             <!-- Live Chipset Status Badge -->
-            <div class="inline-flex flex-wrap items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/90 border border-cyan-500/30 text-xs font-mono text-cyan-300">
-              <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+            <div class="inline-flex flex-wrap items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#12110b] border border-yellow-500/40 text-xs font-mono text-yellow-300">
+              <span class="w-2 h-2 rounded-full bg-yellow-400 animate-ping"></span>
               <span class="font-bold">MOTOROLA EDGE 50</span>
-              <span class="text-slate-600">|</span>
+              <span class="text-yellow-700">|</span>
               <span>CODENAME: <strong class="text-white">tank</strong></span>
-              <span class="text-slate-600">|</span>
-              <span class="text-amber-400"><i class="fa-solid fa-tag"></i> UNOFFICIAL by ajugeorge</span>
+              <span class="text-yellow-700">|</span>
+              <span class="text-yellow-400 font-bold"><i class="fa-solid fa-bolt"></i> THUNDER EDITION</span>
             </div>
 
             <!-- Title -->
             <h1 class="font-orbitron text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-none text-white">
-              VOLTAGE<span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-400">OS</span>
-              <span class="block text-2xl sm:text-3xl lg:text-4xl text-slate-400 font-sans font-bold mt-2">
-                Pure Electrified Android 17
+              VOLTAGE<span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-amber-400 to-yellow-500">OS</span>
+              <span class="block text-2xl sm:text-3xl lg:text-4xl text-amber-200/80 font-sans font-bold mt-2">
+                Zenitsu Yellow Thunder // Android 17
               </span>
             </h1>
 
             <!-- Description -->
-            <p class="text-slate-300 text-base sm:text-lg max-w-2xl font-normal leading-relaxed">
-              Experience fluidity, refined performance, and clean customization tailored for the <strong>Motorola Edge 50 (Snapdragon 7s Gen 2 / SM7450)</strong>. Non-root build with Sandboxed Google Apps included.
+            <p class="text-amber-100/90 text-base sm:text-lg max-w-2xl font-normal leading-relaxed">
+              Electrified speed and lightning-fast responsiveness for the <strong>Motorola Edge 50 (Snapdragon 7s Gen 2 / SM7450)</strong>. Non-root build with Sandboxed Google Apps and pure stock kernel performance.
             </p>
 
             <!-- Quick Specs Row -->
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
-              <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
-                <span class="block text-[10px] font-mono uppercase text-slate-500">Android Version</span>
-                <span class="font-orbitron font-bold text-sm text-cyan-400">17.0 (Baklava)</span>
+              <div class="p-3 rounded-xl bg-[#14130d] border border-yellow-900/30">
+                <span class="block text-[10px] font-mono uppercase text-amber-400/60">Android Version</span>
+                <span class="font-orbitron font-bold text-sm text-yellow-400">17.0 (Baklava)</span>
               </div>
-              <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
-                <span class="block text-[10px] font-mono uppercase text-slate-500">Build Type</span>
-                <span class="font-orbitron font-bold text-sm text-purple-400">UNOFFICIAL</span>
+              <div class="p-3 rounded-xl bg-[#14130d] border border-yellow-900/30">
+                <span class="block text-[10px] font-mono uppercase text-amber-400/60">Build Type</span>
+                <span class="font-orbitron font-bold text-sm text-amber-400">UNOFFICIAL</span>
               </div>
-              <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
-                <span class="block text-[10px] font-mono uppercase text-slate-500">GApps Edition</span>
-                <span class="font-orbitron font-bold text-sm text-emerald-400">Sandboxed</span>
+              <div class="p-3 rounded-xl bg-[#14130d] border border-yellow-900/30">
+                <span class="block text-[10px] font-mono uppercase text-amber-400/60">GApps Edition</span>
+                <span class="font-orbitron font-bold text-sm text-yellow-300">Sandboxed</span>
               </div>
-              <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
-                <span class="block text-[10px] font-mono uppercase text-slate-500">Maintainer</span>
-                <span class="font-orbitron font-bold text-sm text-amber-400">ajugeorge</span>
+              <div class="p-3 rounded-xl bg-[#14130d] border border-yellow-900/30">
+                <span class="block text-[10px] font-mono uppercase text-amber-400/60">Maintainer</span>
+                <span class="font-orbitron font-bold text-sm text-amber-300">ajugeorge</span>
               </div>
             </div>
 
             <!-- Action Buttons -->
             <div class="flex flex-wrap gap-4 pt-4">
-              <a href="#releases" class="px-6 py-3.5 rounded-xl bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-orbitron font-bold text-sm tracking-wider shadow-neon-cyan transition-all flex items-center gap-2">
+              <a href="#releases" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-300 hover:to-amber-400 text-neutral-950 font-orbitron font-bold text-sm tracking-wider shadow-neon-thunder transition-all flex items-center gap-2">
                 <i class="fa-solid fa-cloud-arrow-down"></i>
                 <span>DOWNLOAD BUILDS</span>
               </a>
-              <a href="#flashing" class="px-6 py-3.5 rounded-xl glass-panel hover:bg-slate-800/80 text-slate-200 font-mono text-sm font-semibold transition-all border border-slate-700 flex items-center gap-2">
-                <i class="fa-solid fa-book-sparkles text-cyan-400"></i>
+              <a href="#flashing" class="px-6 py-3.5 rounded-xl glass-panel hover:bg-yellow-950/30 text-amber-100 font-mono text-sm font-semibold transition-all border border-yellow-500/30 flex items-center gap-2">
+                <i class="fa-solid fa-bolt-lightning text-yellow-400"></i>
                 <span>Flashing Instructions</span>
               </a>
             </div>
@@ -245,45 +239,45 @@
 
           <!-- Hero Graphic HUD Card -->
           <div class="lg:col-span-4 flex justify-center">
-            <div class="w-full max-w-sm rounded-2xl glass-panel border border-cyan-500/30 p-6 relative shadow-neon-cyan">
-              <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-4">
+            <div class="w-full max-w-sm rounded-2xl glass-panel border border-yellow-500/40 p-6 relative shadow-neon-thunder">
+              <div class="flex items-center justify-between border-b border-yellow-900/40 pb-4 mb-4">
                 <div class="flex items-center gap-2">
-                  <div class="w-3 h-3 rounded-full bg-cyan-400 animate-pulse"></div>
-                  <span class="font-mono text-xs font-semibold text-cyan-400">SYS_STATUS // ONLINE</span>
+                  <div class="w-3 h-3 rounded-full bg-yellow-400 animate-pulse"></div>
+                  <span class="font-mono text-xs font-semibold text-yellow-400">THUNDER_STATUS // ONLINE</span>
                 </div>
-                <span class="font-mono text-[10px] text-slate-500">ID: TANK-SM7450</span>
+                <span class="font-mono text-[10px] text-amber-400/60">ID: TANK-SM7450</span>
               </div>
               
               <div class="space-y-3 font-mono text-xs">
-                <div class="flex justify-between py-1 border-b border-slate-800/50">
-                  <span class="text-slate-400">Build ID</span>
-                  <span class="text-slate-200 font-semibold">CP2A.260605.016</span>
+                <div class="flex justify-between py-1 border-b border-yellow-900/30">
+                  <span class="text-amber-200/60">Build ID</span>
+                  <span class="text-amber-100 font-semibold">CP2A.260605.016</span>
                 </div>
-                <div class="flex justify-between py-1 border-b border-slate-800/50">
-                  <span class="text-slate-400">Security Patch</span>
-                  <span class="text-emerald-400 font-semibold">2026-09-01</span>
+                <div class="flex justify-between py-1 border-b border-yellow-900/30">
+                  <span class="text-amber-200/60">Security Patch</span>
+                  <span class="text-yellow-400 font-semibold">2026-09-01</span>
                 </div>
-                <div class="flex justify-between py-1 border-b border-slate-800/50">
-                  <span class="text-slate-400">Build Date</span>
-                  <span class="text-slate-200">20260916-1602 UTC</span>
+                <div class="flex justify-between py-1 border-b border-yellow-900/30">
+                  <span class="text-amber-200/60">Build Date</span>
+                  <span class="text-amber-100">20260916-1602 UTC</span>
                 </div>
-                <div class="flex justify-between py-1 border-b border-slate-800/50">
-                  <span class="text-slate-400">Kernel Version</span>
-                  <span class="text-cyan-400">5.10.260 (GKI 5.10)</span>
+                <div class="flex justify-between py-1 border-b border-yellow-900/30">
+                  <span class="text-amber-200/60">Kernel Version</span>
+                  <span class="text-yellow-400">5.10.260 (GKI 5.10)</span>
                 </div>
-                <div class="flex justify-between py-1 border-b border-slate-800/50">
-                  <span class="text-slate-400">SELinux</span>
-                  <span class="text-cyan-400">Enforcing</span>
+                <div class="flex justify-between py-1 border-b border-yellow-900/30">
+                  <span class="text-amber-200/60">SELinux</span>
+                  <span class="text-yellow-300">Enforcing</span>
                 </div>
                 <div class="flex justify-between py-1">
-                  <span class="text-slate-400">GApps</span>
-                  <span class="text-purple-400 font-bold">Sandboxed Edition</span>
+                  <span class="text-amber-200/60">GApps</span>
+                  <span class="text-amber-300 font-bold">Sandboxed Edition</span>
                 </div>
               </div>
 
-              <div class="mt-5 pt-4 border-t border-slate-800 flex items-center justify-between text-[11px] font-mono text-slate-400">
+              <div class="mt-5 pt-4 border-t border-yellow-900/40 flex items-center justify-between text-[11px] font-mono text-amber-200/70">
                 <span>Release Type</span>
-                <span class="text-amber-400 font-semibold">UNOFFICIAL by ajugeorge</span>
+                <span class="text-yellow-400 font-semibold">UNOFFICIAL by ajugeorge</span>
               </div>
             </div>
           </div>
@@ -295,9 +289,9 @@
       <section id="releases" class="space-y-6 scroll-mt-24">
         
         <!-- Section Header -->
-        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-slate-800 pb-4">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-yellow-900/40 pb-4">
           <div>
-            <div class="flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-widest">
+            <div class="flex items-center gap-2 text-yellow-400 font-mono text-xs uppercase tracking-widest">
               <i class="fa-solid fa-box-archive"></i>
               <span>Voltage Repository</span>
             </div>
@@ -309,10 +303,10 @@
           <!-- Filter / Search Tools -->
           <div class="flex items-center gap-3">
             <div class="relative">
-              <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 text-xs"></i>
-              <input type="text" id="release-search" placeholder="Search version, date..." class="pl-9 pr-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-200 focus:outline-none focus:border-cyan-400 font-mono w-48 sm:w-64 transition-all">
+              <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-amber-400/50 text-xs"></i>
+              <input type="text" id="release-search" placeholder="Search version, date..." class="pl-9 pr-4 py-2 rounded-xl bg-[#14130d] border border-yellow-900/40 text-xs text-amber-100 focus:outline-none focus:border-yellow-400 font-mono w-48 sm:w-64 transition-all">
             </div>
-            <button id="refresh-releases" title="Fetch live GitHub releases" class="p-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-cyan-400 hover:border-cyan-500/50 transition-all text-xs">
+            <button id="refresh-releases" title="Fetch live GitHub releases" class="p-2.5 rounded-xl bg-[#14130d] hover:bg-[#1f1d14] border border-yellow-900/40 text-yellow-400 hover:border-yellow-500/50 transition-all text-xs">
               <i class="fa-solid fa-arrows-rotate"></i>
             </button>
           </div>
@@ -322,49 +316,49 @@
         <div id="releases-container" class="grid grid-cols-1 gap-6">
           
           <!-- Primary Featured Build Card -->
-          <div class="release-card glass-panel glass-panel-hover rounded-2xl p-6 sm:p-8 border border-slate-800 transition-all duration-300">
+          <div class="release-card glass-panel glass-panel-hover rounded-2xl p-6 sm:p-8 border border-yellow-900/40 transition-all duration-300">
             
-            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-slate-800">
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-yellow-900/40">
               
               <!-- Release Title & Badges -->
               <div class="space-y-3">
                 <div class="flex flex-wrap items-center gap-2">
-                  <span class="px-3 py-1 rounded-full bg-cyan-950 text-cyan-400 border border-cyan-500/40 text-xs font-mono font-bold">
-                    <i class="fa-solid fa-sparkles mr-1"></i> LATEST RELEASE
+                  <span class="px-3 py-1 rounded-full bg-yellow-950/80 text-yellow-400 border border-yellow-500/50 text-xs font-mono font-bold">
+                    <i class="fa-solid fa-bolt mr-1"></i> LATEST RELEASE
                   </span>
-                  <span class="px-2.5 py-1 rounded-full bg-amber-950 text-amber-300 border border-amber-500/30 text-xs font-mono">
+                  <span class="px-2.5 py-1 rounded-full bg-amber-950/80 text-amber-300 border border-amber-500/40 text-xs font-mono">
                     UNOFFICIAL by ajugeorge
                   </span>
-                  <span class="px-2.5 py-1 rounded-full bg-slate-900 text-slate-300 border border-slate-700 text-xs font-mono">
+                  <span class="px-2.5 py-1 rounded-full bg-[#17150e] text-amber-100 border border-yellow-900/40 text-xs font-mono">
                     Android 17
                   </span>
-                  <span class="px-2.5 py-1 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-500/30 text-xs font-mono">
+                  <span class="px-2.5 py-1 rounded-full bg-yellow-950/60 text-yellow-300 border border-yellow-500/30 text-xs font-mono">
                     Non-Root
                   </span>
-                  <span class="px-2.5 py-1 rounded-full bg-blue-950 text-blue-300 border border-blue-500/30 text-xs font-mono">
+                  <span class="px-2.5 py-1 rounded-full bg-[#1c1a10] text-amber-200 border border-amber-500/30 text-xs font-mono">
                     Sandboxed GApps
                   </span>
                 </div>
                 
                 <div>
                   <h3 class="font-orbitron text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
-                    voltage-6.1-tank-***.zip
+                    voltage-6.1-tank-20260916-1610-UNOFFICIAL.zip
                   </h3>
-                  <p class="text-xs font-mono text-slate-400 mt-1 flex items-center gap-4">
-                    <span><i class="fa-regular fa-calendar text-slate-500 mr-1.5"></i> Date: <strong>September 16, 2026 (20260916-1602 UTC)</strong></span>
-                    <span><i class="fa-solid fa-fingerprint text-slate-500 mr-1.5"></i> Build ID: <strong>CP2A.260605.016</strong></span>
+                  <p class="text-xs font-mono text-amber-200/70 mt-1 flex items-center gap-4">
+                    <span><i class="fa-regular fa-calendar text-yellow-500 mr-1.5"></i> Date: <strong>September 16, 2026 (20260916-1602 UTC)</strong></span>
+                    <span><i class="fa-solid fa-fingerprint text-yellow-500 mr-1.5"></i> Build ID: <strong>CP2A.260605.016</strong></span>
                   </p>
                 </div>
               </div>
 
               <!-- Download Action Group -->
               <div class="flex flex-wrap items-center gap-3">
-                <a href="https://github.com/ajimsjames/voltageos_tank_releases/releases" target="_blank" class="px-5 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-orbitron font-bold text-xs tracking-wider shadow-neon-cyan transition-all flex items-center gap-2">
+                <a href="https://github.com/ajimsjames/voltageos_tank_releases/releases/download/v6.1-tank-20260917/voltage-6.1-tank-20260916-1610-UNOFFICIAL.zip" class="px-5 py-3 rounded-xl bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 hover:from-yellow-300 hover:to-amber-300 text-neutral-950 font-orbitron font-bold text-xs tracking-wider shadow-neon-thunder transition-all flex items-center gap-2">
                   <i class="fa-solid fa-download"></i>
-                  <span>DOWNLOAD ZIP</span>
+                  <span>DOWNLOAD ZIP (1.6 GB)</span>
                 </a>
-                <a href="https://github.com/ajimsjames/voltageos_tank_releases/releases" target="_blank" class="px-4 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 text-xs font-mono transition-all flex items-center gap-2">
-                  <i class="fa-solid fa-box-open text-purple-400"></i>
+                <a href="https://github.com/ajimsjames/voltageos_tank_releases/releases" target="_blank" class="px-4 py-3 rounded-xl bg-[#14130d] hover:bg-[#1f1d14] border border-yellow-900/40 text-amber-100 text-xs font-mono transition-all flex items-center gap-2 hover:border-yellow-500/40">
+                  <i class="fa-solid fa-box-open text-yellow-400"></i>
                   <span>All Artifacts</span>
                 </a>
               </div>
@@ -372,108 +366,108 @@
             </div>
 
             <!-- Checksums & Quick Commands -->
-            <div class="py-4 border-b border-slate-800/60 grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-mono">
-              <div class="flex items-center justify-between p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+            <div class="py-4 border-b border-yellow-900/40 grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-mono">
+              <div class="flex items-center justify-between p-3 rounded-xl bg-[#14130d] border border-yellow-900/30">
                 <div class="truncate mr-2">
-                  <span class="text-slate-500 block text-[10px]">SECURITY PATCH LEVEL</span>
-                  <span class="text-emerald-300 font-mono select-all">September 1, 2026 (2026-09-01)</span>
+                  <span class="text-amber-400/60 block text-[10px]">SECURITY PATCH LEVEL</span>
+                  <span class="text-yellow-400 font-mono select-all">September 1, 2026 (2026-09-01)</span>
                 </div>
               </div>
 
-              <div class="flex items-center justify-between p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+              <div class="flex items-center justify-between p-3 rounded-xl bg-[#14130d] border border-yellow-900/30">
                 <div class="truncate mr-2">
-                  <span class="text-slate-500 block text-[10px]">FLASH COMMAND</span>
-                  <span class="text-cyan-300 font-mono truncate block">adb sideload voltage-6.1-tank-***.zip</span>
+                  <span class="text-amber-400/60 block text-[10px]">FLASH COMMAND</span>
+                  <span class="text-yellow-300 font-mono truncate block">adb sideload voltage-6.1-tank-***.zip</span>
                 </div>
-                <button onclick="copyText('adb sideload voltage-6.1-tank-***.zip')" class="p-2 text-slate-400 hover:text-cyan-400 transition-colors">
+                <button onclick="copyText('adb sideload voltage-6.1-tank-***.zip')" class="p-2 text-amber-400/70 hover:text-yellow-400 transition-colors">
                   <i class="fa-regular fa-copy"></i>
                 </button>
               </div>
             </div>
 
-            <!-- Direct Partition Image Downloads -->
-            <div class="py-4 border-b border-slate-800/60 space-y-2.5">
-              <div class="flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-wider">
-                <i class="fa-solid fa-microchip"></i>
+            <!-- Direct Partition Image Downloads (Zenitsu Thunder Style) -->
+            <div class="py-4 border-b border-yellow-900/40 space-y-2.5">
+              <div class="flex items-center gap-2 text-yellow-400 font-mono text-xs uppercase tracking-wider">
+                <i class="fa-solid fa-bolt-lightning"></i>
                 <span>Direct Partition Images & Downloads</span>
               </div>
               <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2.5 font-mono text-xs">
-                <a href="https://github.com/ajimsjames/voltageos_tank_releases/releases/download/v6.1-tank-20260917/boot.img" class="p-2.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-cyan-500/40 transition-all flex items-center justify-between text-slate-200 group">
+                <a href="https://github.com/ajimsjames/voltageos_tank_releases/releases/download/v6.1-tank-20260917/boot.img" class="p-2.5 rounded-xl bg-[#14130d] hover:bg-[#1f1d14] border border-yellow-900/40 hover:border-yellow-500/50 transition-all flex items-center justify-between text-amber-100 group">
                   <div>
-                    <span class="block font-bold text-white group-hover:text-cyan-400 transition-colors">boot.img</span>
-                    <span class="text-[10px] text-slate-500">96 MB</span>
+                    <span class="block font-bold text-white group-hover:text-yellow-400 transition-colors">boot.img</span>
+                    <span class="text-[10px] text-amber-400/60">96 MB</span>
                   </div>
-                  <i class="fa-solid fa-download text-cyan-400 text-xs"></i>
+                  <i class="fa-solid fa-download text-yellow-400 text-xs"></i>
                 </a>
-                <a href="https://github.com/ajimsjames/voltageos_tank_releases/releases/download/v6.1-tank-20260917/vendor_boot.img" class="p-2.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-cyan-500/40 transition-all flex items-center justify-between text-slate-200 group">
+                <a href="https://github.com/ajimsjames/voltageos_tank_releases/releases/download/v6.1-tank-20260917/vendor_boot.img" class="p-2.5 rounded-xl bg-[#14130d] hover:bg-[#1f1d14] border border-yellow-900/40 hover:border-yellow-500/50 transition-all flex items-center justify-between text-amber-100 group">
                   <div>
-                    <span class="block font-bold text-white group-hover:text-cyan-400 transition-colors">vendor_boot.img</span>
-                    <span class="text-[10px] text-slate-500">96 MB</span>
+                    <span class="block font-bold text-white group-hover:text-yellow-400 transition-colors">vendor_boot.img</span>
+                    <span class="text-[10px] text-amber-400/60">96 MB</span>
                   </div>
-                  <i class="fa-solid fa-download text-cyan-400 text-xs"></i>
+                  <i class="fa-solid fa-download text-yellow-400 text-xs"></i>
                 </a>
-                <a href="https://github.com/ajimsjames/voltageos_tank_releases/releases/download/v6.1-tank-20260917/dtbo.img" class="p-2.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-cyan-500/40 transition-all flex items-center justify-between text-slate-200 group">
+                <a href="https://github.com/ajimsjames/voltageos_tank_releases/releases/download/v6.1-tank-20260917/dtbo.img" class="p-2.5 rounded-xl bg-[#14130d] hover:bg-[#1f1d14] border border-yellow-900/40 hover:border-yellow-500/50 transition-all flex items-center justify-between text-amber-100 group">
                   <div>
-                    <span class="block font-bold text-white group-hover:text-cyan-400 transition-colors">dtbo.img</span>
-                    <span class="text-[10px] text-slate-500">24 MB</span>
+                    <span class="block font-bold text-white group-hover:text-yellow-400 transition-colors">dtbo.img</span>
+                    <span class="text-[10px] text-amber-400/60">24 MB</span>
                   </div>
-                  <i class="fa-solid fa-download text-cyan-400 text-xs"></i>
+                  <i class="fa-solid fa-download text-yellow-400 text-xs"></i>
                 </a>
-                <a href="https://github.com/ajimsjames/voltageos_tank_releases/releases/download/v6.1-tank-20260917/recovery.img" class="p-2.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-cyan-500/40 transition-all flex items-center justify-between text-slate-200 group">
+                <a href="https://github.com/ajimsjames/voltageos_tank_releases/releases/download/v6.1-tank-20260917/recovery.img" class="p-2.5 rounded-xl bg-[#14130d] hover:bg-[#1f1d14] border border-yellow-900/40 hover:border-yellow-500/50 transition-all flex items-center justify-between text-amber-100 group">
                   <div>
-                    <span class="block font-bold text-white group-hover:text-cyan-400 transition-colors">recovery.img</span>
-                    <span class="text-[10px] text-slate-500">128 MB</span>
+                    <span class="block font-bold text-white group-hover:text-yellow-400 transition-colors">recovery.img</span>
+                    <span class="text-[10px] text-amber-400/60">128 MB</span>
                   </div>
-                  <i class="fa-solid fa-download text-cyan-400 text-xs"></i>
+                  <i class="fa-solid fa-download text-yellow-400 text-xs"></i>
                 </a>
-                <a href="https://github.com/ajimsjames/voltageos_tank_releases/releases/download/v6.1-tank-20260917/vendor_dlkm.img" class="p-2.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-cyan-500/40 transition-all flex items-center justify-between text-slate-200 group">
+                <a href="https://github.com/ajimsjames/voltageos_tank_releases/releases/download/v6.1-tank-20260917/vendor_dlkm.img" class="p-2.5 rounded-xl bg-[#14130d] hover:bg-[#1f1d14] border border-yellow-900/40 hover:border-yellow-500/50 transition-all flex items-center justify-between text-amber-100 group">
                   <div>
-                    <span class="block font-bold text-white group-hover:text-cyan-400 transition-colors">vendor_dlkm.img</span>
-                    <span class="text-[10px] text-slate-500">72 MB</span>
+                    <span class="block font-bold text-white group-hover:text-yellow-400 transition-colors">vendor_dlkm.img</span>
+                    <span class="text-[10px] text-amber-400/60">72 MB</span>
                   </div>
-                  <i class="fa-solid fa-download text-cyan-400 text-xs"></i>
+                  <i class="fa-solid fa-download text-yellow-400 text-xs"></i>
                 </a>
-                <a href="https://github.com/ajimsjames/voltageos_tank_releases/releases/download/v6.1-tank-20260917/super_empty.img" class="p-2.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-cyan-500/40 transition-all flex items-center justify-between text-slate-200 group">
+                <a href="https://github.com/ajimsjames/voltageos_tank_releases/releases/download/v6.1-tank-20260917/super_empty.img" class="p-2.5 rounded-xl bg-[#14130d] hover:bg-[#1f1d14] border border-yellow-900/40 hover:border-yellow-500/50 transition-all flex items-center justify-between text-amber-100 group">
                   <div>
-                    <span class="block font-bold text-white group-hover:text-cyan-400 transition-colors">super_empty.img</span>
-                    <span class="text-[10px] text-slate-500">5 KB</span>
+                    <span class="block font-bold text-white group-hover:text-yellow-400 transition-colors">super_empty.img</span>
+                    <span class="text-[10px] text-amber-400/60">5 KB</span>
                   </div>
-                  <i class="fa-solid fa-download text-cyan-400 text-xs"></i>
+                  <i class="fa-solid fa-download text-yellow-400 text-xs"></i>
                 </a>
-                <a href="https://github.com/ajimsjames/voltageos_tank_releases/releases/download/v6.1-tank-20260917/vbmeta.img" class="p-2.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-cyan-500/40 transition-all flex items-center justify-between text-slate-200 group">
+                <a href="https://github.com/ajimsjames/voltageos_tank_releases/releases/download/v6.1-tank-20260917/vbmeta.img" class="p-2.5 rounded-xl bg-[#14130d] hover:bg-[#1f1d14] border border-yellow-900/40 hover:border-yellow-500/50 transition-all flex items-center justify-between text-amber-100 group">
                   <div>
-                    <span class="block font-bold text-white group-hover:text-cyan-400 transition-colors">vbmeta.img</span>
-                    <span class="text-[10px] text-slate-500">64 KB</span>
+                    <span class="block font-bold text-white group-hover:text-yellow-400 transition-colors">vbmeta.img</span>
+                    <span class="text-[10px] text-amber-400/60">64 KB</span>
                   </div>
-                  <i class="fa-solid fa-download text-cyan-400 text-xs"></i>
+                  <i class="fa-solid fa-download text-yellow-400 text-xs"></i>
                 </a>
-                <a href="https://github.com/ajimsjames/voltageos_tank_releases/releases/download/v6.1-tank-20260917/vbmeta_system.img" class="p-2.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-cyan-500/40 transition-all flex items-center justify-between text-slate-200 group">
+                <a href="https://github.com/ajimsjames/voltageos_tank_releases/releases/download/v6.1-tank-20260917/vbmeta_system.img" class="p-2.5 rounded-xl bg-[#14130d] hover:bg-[#1f1d14] border border-yellow-900/40 hover:border-yellow-500/50 transition-all flex items-center justify-between text-amber-100 group">
                   <div>
-                    <span class="block font-bold text-white group-hover:text-cyan-400 transition-colors">vbmeta_sys.img</span>
-                    <span class="text-[10px] text-slate-500">64 KB</span>
+                    <span class="block font-bold text-white group-hover:text-yellow-400 transition-colors">vbmeta_sys.img</span>
+                    <span class="text-[10px] text-amber-400/60">64 KB</span>
                   </div>
-                  <i class="fa-solid fa-download text-cyan-400 text-xs"></i>
+                  <i class="fa-solid fa-download text-yellow-400 text-xs"></i>
                 </a>
-                <a href="https://github.com/ajimsjames/voltageos_tank_releases/releases/download/v6.1-tank-20260917/sha256sum.txt" target="_blank" class="p-2.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-cyan-500/40 transition-all flex items-center justify-between text-slate-200 group">
+                <a href="https://github.com/ajimsjames/voltageos_tank_releases/releases/download/v6.1-tank-20260917/sha256sum.txt" target="_blank" class="p-2.5 rounded-xl bg-[#14130d] hover:bg-[#1f1d14] border border-yellow-900/40 hover:border-yellow-500/50 transition-all flex items-center justify-between text-amber-100 group">
                   <div>
-                    <span class="block font-bold text-white group-hover:text-emerald-400 transition-colors">sha256sum.txt</span>
-                    <span class="text-[10px] text-slate-500">Checksum</span>
+                    <span class="block font-bold text-white group-hover:text-yellow-400 transition-colors">sha256sum.txt</span>
+                    <span class="text-[10px] text-amber-400/60">Checksum</span>
                   </div>
-                  <i class="fa-solid fa-file-shield text-emerald-400 text-xs"></i>
+                  <i class="fa-solid fa-file-shield text-yellow-400 text-xs"></i>
                 </a>
-                <a href="https://github.com/ajimsjames/voltageos_tank_releases/releases/download/v6.1-tank-20260917/md5sum.txt" target="_blank" class="p-2.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-cyan-500/40 transition-all flex items-center justify-between text-slate-200 group">
+                <a href="https://github.com/ajimsjames/voltageos_tank_releases/releases/download/v6.1-tank-20260917/md5sum.txt" target="_blank" class="p-2.5 rounded-xl bg-[#14130d] hover:bg-[#1f1d14] border border-yellow-900/40 hover:border-yellow-500/50 transition-all flex items-center justify-between text-amber-100 group">
                   <div>
-                    <span class="block font-bold text-white group-hover:text-purple-400 transition-colors">md5sum.txt</span>
-                    <span class="text-[10px] text-slate-500">Checksum</span>
+                    <span class="block font-bold text-white group-hover:text-yellow-400 transition-colors">md5sum.txt</span>
+                    <span class="text-[10px] text-amber-400/60">Checksum</span>
                   </div>
-                  <i class="fa-solid fa-file-shield text-purple-400 text-xs"></i>
+                  <i class="fa-solid fa-file-shield text-amber-400 text-xs"></i>
                 </a>
               </div>
             </div>
 
             <!-- Expandable Changelog Section -->
             <details class="group mt-4 cursor-pointer" open>
-              <summary class="flex items-center justify-between text-xs font-mono font-semibold text-cyan-400 py-2 hover:text-cyan-300 transition-colors select-none list-none">
+              <summary class="flex items-center justify-between text-xs font-mono font-semibold text-yellow-400 py-2 hover:text-yellow-300 transition-colors select-none list-none">
                 <span class="flex items-center gap-2">
                   <i class="fa-solid fa-list-check"></i>
                   <span>VIEW CHANGELOG & RELEASE NOTES</span>
@@ -481,21 +475,21 @@
                 <i class="fa-solid fa-chevron-down group-open:rotate-180 transition-transform duration-200"></i>
               </summary>
 
-              <div class="mt-4 pt-4 border-t border-slate-800/80 space-y-4 text-xs font-sans text-slate-300">
+              <div class="mt-4 pt-4 border-t border-yellow-900/40 space-y-4 text-xs font-sans text-amber-100/90">
                 <div>
-                  <h4 class="font-mono text-xs uppercase tracking-wider text-cyan-400 font-bold mb-2 flex items-center gap-2">
+                  <h4 class="font-mono text-xs uppercase tracking-wider text-yellow-400 font-bold mb-2 flex items-center gap-2">
                     <i class="fa-solid fa-mobile-screen"></i> Device Specific:
                   </h4>
-                  <ul class="list-disc list-inside space-y-1 text-slate-200 ml-2 font-mono text-[12px]">
+                  <ul class="list-disc list-inside space-y-1 text-amber-100 ml-2 font-mono text-[12px]">
                     <li>Initial release for Motorola Edge 50 (tank).</li>
                   </ul>
                 </div>
 
                 <div>
-                  <h4 class="font-mono text-xs uppercase tracking-wider text-purple-400 font-bold mb-2 flex items-center gap-2">
+                  <h4 class="font-mono text-xs uppercase tracking-wider text-amber-400 font-bold mb-2 flex items-center gap-2">
                     <i class="fa-solid fa-bolt"></i> VoltageOS (September 2026 ASB):
                   </h4>
-                  <ul class="list-disc list-inside space-y-1 text-slate-300 ml-2 font-mono text-[12px]">
+                  <ul class="list-disc list-inside space-y-1 text-amber-100/80 ml-2 font-mono text-[12px]">
                     <li>Fixed App Drawer zoom toggle.</li>
                     <li>Fixed workspace items appearing behind the App Drawer when blur is disabled.</li>
                     <li>Fixed lockscreen clock thickness option.</li>
@@ -526,8 +520,8 @@
       <!-- BUILD & KERNEL TECHNICAL HUD SECTION -->
       <section id="build-info" class="space-y-6 scroll-mt-24">
         
-        <div class="border-b border-slate-800 pb-4">
-          <div class="flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-widest">
+        <div class="border-b border-yellow-900/40 pb-4">
+          <div class="flex items-center gap-2 text-yellow-400 font-mono text-xs uppercase tracking-widest">
             <i class="fa-solid fa-circle-info"></i>
             <span>System Details</span>
           </div>
@@ -538,48 +532,48 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 font-mono text-xs">
           
-          <div class="glass-panel p-6 rounded-2xl border border-slate-800 space-y-4">
-            <div class="flex items-center gap-2 text-cyan-400 font-bold border-b border-slate-800 pb-3">
+          <div class="glass-panel p-6 rounded-2xl border border-yellow-900/40 space-y-4">
+            <div class="flex items-center gap-2 text-yellow-400 font-bold border-b border-yellow-900/40 pb-3">
               <i class="fa-solid fa-microchip"></i>
               <span>KERNEL ARCHITECTURE</span>
             </div>
             <div class="space-y-3">
               <div>
-                <span class="text-slate-500 block text-[10px]">KERNEL VERSION</span>
-                <span class="text-slate-200 font-semibold select-all">5.10.260-gki-g822fb9c274c6 (GKI 5.10)</span>
+                <span class="text-amber-400/60 block text-[10px]">KERNEL VERSION</span>
+                <span class="text-amber-100 font-semibold select-all">5.10.260-gki-g822fb9c274c6 (GKI 5.10)</span>
               </div>
               <div>
-                <span class="text-slate-500 block text-[10px]">KERNEL TOOLCHAIN</span>
-                <span class="text-purple-300 select-all">Clang 22.0.2 + LLD 22.0.2 (+pgo, +bolt, +lto, +mlgo)</span>
+                <span class="text-amber-400/60 block text-[10px]">KERNEL TOOLCHAIN</span>
+                <span class="text-yellow-300 select-all">Clang 22.0.2 + LLD 22.0.2 (+pgo, +bolt, +lto, +mlgo)</span>
               </div>
               <div>
-                <span class="text-slate-500 block text-[10px]">SELINUX STATUS</span>
-                <span class="text-emerald-400 font-semibold">Enforcing</span>
+                <span class="text-amber-400/60 block text-[10px]">SELINUX STATUS</span>
+                <span class="text-yellow-400 font-semibold">Enforcing</span>
               </div>
             </div>
           </div>
 
-          <div class="glass-panel p-6 rounded-2xl border border-slate-800 space-y-4">
-            <div class="flex items-center gap-2 text-purple-400 font-bold border-b border-slate-800 pb-3">
+          <div class="glass-panel p-6 rounded-2xl border border-yellow-900/40 space-y-4">
+            <div class="flex items-center gap-2 text-amber-400 font-bold border-b border-yellow-900/40 pb-3">
               <i class="fa-solid fa-cube"></i>
               <span>ROM & BUILD MATRIX</span>
             </div>
             <div class="space-y-3">
               <div>
-                <span class="text-slate-500 block text-[10px]">BUILD ID</span>
-                <span class="text-slate-200 font-semibold select-all">CP2A.260605.016</span>
+                <span class="text-amber-400/60 block text-[10px]">BUILD ID</span>
+                <span class="text-amber-100 font-semibold select-all">CP2A.260605.016</span>
               </div>
               <div>
-                <span class="text-slate-500 block text-[10px]">SECURITY PATCH LEVEL</span>
-                <span class="text-emerald-400 font-semibold">September 1, 2026 (2026-09-01)</span>
+                <span class="text-amber-400/60 block text-[10px]">SECURITY PATCH LEVEL</span>
+                <span class="text-yellow-400 font-semibold">September 1, 2026 (2026-09-01)</span>
               </div>
               <div>
-                <span class="text-slate-500 block text-[10px]">BUILD DATE & TIMESTAMP</span>
-                <span class="text-slate-200">September 16, 2026 (20260916-1602 UTC)</span>
+                <span class="text-amber-400/60 block text-[10px]">BUILD DATE & TIMESTAMP</span>
+                <span class="text-amber-100">September 16, 2026 (20260916-1602 UTC)</span>
               </div>
               <div>
-                <span class="text-slate-500 block text-[10px]">MAINTAINER</span>
-                <span class="text-amber-400 font-semibold">ajugeorge ("UNOFFICIAL by ajugeorge")</span>
+                <span class="text-amber-400/60 block text-[10px]">MAINTAINER</span>
+                <span class="text-yellow-300 font-semibold">ajugeorge ("UNOFFICIAL by ajugeorge")</span>
               </div>
             </div>
           </div>
@@ -591,37 +585,37 @@
       <!-- FLASHING INSTRUCTIONS & TERMINAL MATRIX -->
       <section id="flashing" class="space-y-6 scroll-mt-24">
         
-        <div class="border-b border-slate-800 pb-4">
-          <div class="flex items-center gap-2 text-purple-400 font-mono text-xs uppercase tracking-widest">
+        <div class="border-b border-yellow-900/40 pb-4">
+          <div class="flex items-center gap-2 text-yellow-400 font-mono text-xs uppercase tracking-widest">
             <i class="fa-solid fa-terminal"></i>
             <span>Installation Guide</span>
           </div>
           <h2 class="font-orbitron text-2xl sm:text-3xl font-extrabold text-white mt-1">
             Flashing Instructions & Terminal Commands
           </h2>
-          <p class="text-xs text-slate-400 font-mono mt-1">
+          <p class="text-xs text-amber-200/60 font-mono mt-1">
             Follow the steps carefully. Unlocked bootloader and stock Motorola firmware baseline are required.
           </p>
         </div>
 
         <!-- Terminal Tabs & Interactive Shell -->
-        <div class="glass-panel rounded-2xl border border-slate-800 overflow-hidden shadow-glow-card">
+        <div class="glass-panel rounded-2xl border border-yellow-900/40 overflow-hidden shadow-glow-card">
           
           <!-- Terminal Header & Tab Switcher -->
-          <div class="flex flex-wrap items-center justify-between border-b border-slate-800 px-6 py-4 bg-slate-950/80">
+          <div class="flex flex-wrap items-center justify-between border-b border-yellow-900/40 px-6 py-4 bg-[#0a0a07]">
             <div class="flex items-center gap-2">
               <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
-              <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+              <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
               <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
-              <span class="font-mono text-xs text-slate-400 ml-2 font-semibold">terminal@voltageos-tank:~#</span>
+              <span class="font-mono text-xs text-amber-400/70 ml-2 font-semibold">terminal@voltageos-tank:~#</span>
             </div>
 
             <!-- Tab Buttons -->
-            <div class="flex items-center gap-1.5 p-1 bg-slate-900 rounded-xl border border-slate-800 text-xs font-mono">
-              <button onclick="switchTab('clean')" id="tab-clean" class="px-3 py-1.5 rounded-lg bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 font-semibold transition-all">
+            <div class="flex items-center gap-1.5 p-1 bg-[#14130d] rounded-xl border border-yellow-900/40 text-xs font-mono">
+              <button onclick="switchTab('clean')" id="tab-clean" class="px-3 py-1.5 rounded-lg bg-yellow-500/20 text-yellow-400 border border-yellow-500/40 font-semibold transition-all">
                 Clean Flash (First Time)
               </button>
-              <button onclick="switchTab('dirty')" id="tab-dirty" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-slate-200 transition-all">
+              <button onclick="switchTab('dirty')" id="tab-dirty" class="px-3 py-1.5 rounded-lg text-amber-300/60 hover:text-amber-100 transition-all">
                 Dirty Flash (Update)
               </button>
             </div>
@@ -630,8 +624,8 @@
           <!-- Tab Content: Clean Flash -->
           <div id="content-clean" class="p-6 sm:p-8 space-y-6">
             
-            <div class="p-4 rounded-xl bg-amber-950/30 border border-amber-500/30 text-amber-300 text-xs font-mono flex items-start gap-3">
-              <i class="fa-solid fa-triangle-exclamation text-base mt-0.5"></i>
+            <div class="p-4 rounded-xl bg-amber-950/40 border border-amber-500/40 text-amber-200 text-xs font-mono flex items-start gap-3">
+              <i class="fa-solid fa-triangle-exclamation text-base text-yellow-400 mt-0.5"></i>
               <div>
                 <strong>IMPORTANT:</strong> Clean flash will wipe your device internal storage. Please back up all photos and files before starting.
               </div>
@@ -640,33 +634,33 @@
             <ol class="space-y-4 font-mono text-xs">
               
               <!-- Step 1 -->
-              <li class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
+              <li class="p-4 rounded-xl bg-[#14130d] border border-yellow-900/30 space-y-2">
                 <div class="flex items-center justify-between">
-                  <span class="font-bold text-cyan-400 flex items-center gap-2">
-                    <span class="w-5 h-5 rounded-full bg-cyan-950 text-cyan-400 border border-cyan-500/40 flex items-center justify-center text-[10px]">1</span>
+                  <span class="font-bold text-yellow-400 flex items-center gap-2">
+                    <span class="w-5 h-5 rounded-full bg-yellow-950 text-yellow-400 border border-yellow-500/50 flex items-center justify-center text-[10px]">1</span>
                     Reboot phone to Fastboot Mode
                   </span>
-                  <button onclick="copyText('adb reboot bootloader')" class="text-slate-400 hover:text-cyan-400 text-xs">
+                  <button onclick="copyText('adb reboot bootloader')" class="text-amber-400/70 hover:text-yellow-400 text-xs">
                     <i class="fa-regular fa-copy mr-1"></i> Copy
                   </button>
                 </div>
-                <div class="bg-black/80 p-3 rounded-lg text-slate-300 border border-slate-800 select-all">
+                <div class="bg-black/90 p-3 rounded-lg text-amber-100 border border-yellow-900/30 select-all">
                   adb reboot bootloader
                 </div>
               </li>
 
               <!-- Step 2 -->
-              <li class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
+              <li class="p-4 rounded-xl bg-[#14130d] border border-yellow-900/30 space-y-2">
                 <div class="flex items-center justify-between">
-                  <span class="font-bold text-cyan-400 flex items-center gap-2">
-                    <span class="w-5 h-5 rounded-full bg-cyan-950 text-cyan-400 border border-cyan-500/40 flex items-center justify-center text-[10px]">2</span>
+                  <span class="font-bold text-yellow-400 flex items-center gap-2">
+                    <span class="w-5 h-5 rounded-full bg-yellow-950 text-yellow-400 border border-yellow-500/50 flex items-center justify-center text-[10px]">2</span>
                     Flash Recovery Partitions
                   </span>
-                  <button onclick="copyText('fastboot flash boot boot.img\nfastboot flash vendor_boot vendor_boot.img\nfastboot flash dtbo dtbo.img\nfastboot flash recovery recovery.img')" class="text-slate-400 hover:text-cyan-400 text-xs">
+                  <button onclick="copyText('fastboot flash boot boot.img\nfastboot flash vendor_boot vendor_boot.img\nfastboot flash dtbo dtbo.img\nfastboot flash recovery recovery.img')" class="text-amber-400/70 hover:text-yellow-400 text-xs">
                     <i class="fa-regular fa-copy mr-1"></i> Copy All
                   </button>
                 </div>
-                <div class="bg-black/80 p-3 rounded-lg text-slate-300 border border-slate-800 space-y-1">
+                <div class="bg-black/90 p-3 rounded-lg text-amber-100 border border-yellow-900/30 space-y-1">
                   <div>fastboot flash boot boot.img</div>
                   <div>fastboot flash vendor_boot vendor_boot.img</div>
                   <div>fastboot flash dtbo dtbo.img</div>
@@ -675,52 +669,52 @@
               </li>
 
               <!-- Step 3 -->
-              <li class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
+              <li class="p-4 rounded-xl bg-[#14130d] border border-yellow-900/30 space-y-2">
                 <div class="flex items-center justify-between">
-                  <span class="font-bold text-cyan-400 flex items-center gap-2">
-                    <span class="w-5 h-5 rounded-full bg-cyan-950 text-cyan-400 border border-cyan-500/40 flex items-center justify-center text-[10px]">3</span>
+                  <span class="font-bold text-yellow-400 flex items-center gap-2">
+                    <span class="w-5 h-5 rounded-full bg-yellow-950 text-yellow-400 border border-yellow-500/50 flex items-center justify-center text-[10px]">3</span>
                     Reboot into Recovery & Format Data
                   </span>
-                  <button onclick="copyText('fastboot reboot recovery')" class="text-slate-400 hover:text-cyan-400 text-xs">
+                  <button onclick="copyText('fastboot reboot recovery')" class="text-amber-400/70 hover:text-yellow-400 text-xs">
                     <i class="fa-regular fa-copy mr-1"></i> Copy
                   </button>
                 </div>
-                <div class="bg-black/80 p-3 rounded-lg text-slate-300 border border-slate-800">
+                <div class="bg-black/90 p-3 rounded-lg text-amber-100 border border-yellow-900/30">
                   fastboot reboot recovery
                 </div>
-                <p class="text-[11px] text-slate-400 font-sans">
+                <p class="text-[11px] text-amber-200/70 font-sans">
                   In Recovery menu: Navigate to <strong>Factory Reset</strong> &gt; <strong>Format data/factory reset</strong> and confirm.
                 </p>
               </li>
 
               <!-- Step 4 -->
-              <li class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
+              <li class="p-4 rounded-xl bg-[#14130d] border border-yellow-900/30 space-y-2">
                 <div class="flex items-center justify-between">
-                  <span class="font-bold text-cyan-400 flex items-center gap-2">
-                    <span class="w-5 h-5 rounded-full bg-cyan-950 text-cyan-400 border border-cyan-500/40 flex items-center justify-center text-[10px]">4</span>
+                  <span class="font-bold text-yellow-400 flex items-center gap-2">
+                    <span class="w-5 h-5 rounded-full bg-yellow-950 text-yellow-400 border border-yellow-500/50 flex items-center justify-center text-[10px]">4</span>
                     Sideload VoltageOS Package
                   </span>
-                  <button onclick="copyText('adb sideload voltage-6.1-tank-***.zip')" class="text-slate-400 hover:text-cyan-400 text-xs">
+                  <button onclick="copyText('adb sideload voltage-6.1-tank-***.zip')" class="text-amber-400/70 hover:text-yellow-400 text-xs">
                     <i class="fa-regular fa-copy mr-1"></i> Copy
                   </button>
                 </div>
-                <div class="bg-black/80 p-3 rounded-lg text-slate-300 border border-slate-800">
+                <div class="bg-black/90 p-3 rounded-lg text-amber-100 border border-yellow-900/30">
                   adb sideload voltage-6.1-tank-***.zip
                 </div>
-                <p class="text-[11px] text-slate-400 font-sans">
+                <p class="text-[11px] text-amber-200/70 font-sans">
                   In Recovery: Select <strong>Apply Update</strong> &gt; <strong>Apply from ADB</strong>, then run the command above on your computer.
                 </p>
               </li>
 
               <!-- Step 5 -->
-              <li class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
+              <li class="p-4 rounded-xl bg-[#14130d] border border-yellow-900/30 space-y-2">
                 <div class="flex items-center justify-between">
-                  <span class="font-bold text-cyan-400 flex items-center gap-2">
-                    <span class="w-5 h-5 rounded-full bg-cyan-950 text-cyan-400 border border-cyan-500/40 flex items-center justify-center text-[10px]">5</span>
+                  <span class="font-bold text-yellow-400 flex items-center gap-2">
+                    <span class="w-5 h-5 rounded-full bg-yellow-950 text-yellow-400 border border-yellow-500/50 flex items-center justify-center text-[10px]">5</span>
                     Reboot to System
                   </span>
                 </div>
-                <p class="text-[11px] text-slate-400 font-sans">
+                <p class="text-[11px] text-amber-200/70 font-sans">
                   Once installation reaches 100% or step 2/2 completes, select <strong>Reboot system now</strong>. Enjoy VoltageOS 6.1!
                 </p>
               </li>
@@ -731,29 +725,29 @@
 
           <!-- Tab Content: Dirty Flash -->
           <div id="content-dirty" class="p-6 sm:p-8 space-y-6 hidden">
-            <div class="p-4 rounded-xl bg-blue-950/30 border border-blue-500/30 text-blue-300 text-xs font-mono flex items-start gap-3">
-              <i class="fa-solid fa-circle-info text-base mt-0.5"></i>
+            <div class="p-4 rounded-xl bg-amber-950/30 border border-yellow-500/30 text-amber-200 text-xs font-mono flex items-start gap-3">
+              <i class="fa-solid fa-circle-info text-base text-yellow-400 mt-0.5"></i>
               <div>
                 <strong>DIRTY FLASH NOTE:</strong> Used for upgrading from an older VoltageOS build without wiping data.
               </div>
             </div>
 
             <ol class="space-y-4 font-mono text-xs">
-              <li class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
-                <span class="font-bold text-purple-400 block">1. Reboot into Voltage Recovery</span>
-                <div class="bg-black/80 p-3 rounded-lg text-slate-300 border border-slate-800 select-all">
+              <li class="p-4 rounded-xl bg-[#14130d] border border-yellow-900/30 space-y-2">
+                <span class="font-bold text-yellow-400 block">1. Reboot into Voltage Recovery</span>
+                <div class="bg-black/90 p-3 rounded-lg text-amber-100 border border-yellow-900/30 select-all">
                   adb reboot recovery
                 </div>
               </li>
-              <li class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
-                <span class="font-bold text-purple-400 block">2. Sideload New VoltageOS ZIP</span>
-                <div class="bg-black/80 p-3 rounded-lg text-slate-300 border border-slate-800 select-all">
+              <li class="p-4 rounded-xl bg-[#14130d] border border-yellow-900/30 space-y-2">
+                <span class="font-bold text-yellow-400 block">2. Sideload New VoltageOS ZIP</span>
+                <div class="bg-black/90 p-3 rounded-lg text-amber-100 border border-yellow-900/30 select-all">
                   adb sideload voltage-6.1-tank-***.zip
                 </div>
               </li>
-              <li class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
-                <span class="font-bold text-purple-400 block">3. (Optional) Wipe Dalvik/ART Cache & Reboot</span>
-                <div class="bg-black/80 p-3 rounded-lg text-slate-300 border border-slate-800 select-all">
+              <li class="p-4 rounded-xl bg-[#14130d] border border-yellow-900/30 space-y-2">
+                <span class="font-bold text-yellow-400 block">3. (Optional) Wipe Dalvik/ART Cache & Reboot</span>
+                <div class="bg-black/90 p-3 rounded-lg text-amber-100 border border-yellow-900/30 select-all">
                   Select "Reboot system now"
                 </div>
               </li>
@@ -767,8 +761,8 @@
       <!-- DEVICE SPECIFICATIONS MATRIX -->
       <section id="specs" class="space-y-6 scroll-mt-24">
         
-        <div class="border-b border-slate-800 pb-4">
-          <div class="flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-widest">
+        <div class="border-b border-yellow-900/40 pb-4">
+          <div class="flex items-center gap-2 text-yellow-400 font-mono text-xs uppercase tracking-widest">
             <i class="fa-solid fa-microchip"></i>
             <span>Hardware HUD</span>
           </div>
@@ -780,13 +774,13 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 font-mono text-xs">
           
           <!-- SoC & Performance -->
-          <div class="glass-panel p-6 rounded-2xl border border-slate-800 space-y-3">
-            <div class="w-10 h-10 rounded-xl bg-cyan-950/80 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-lg">
+          <div class="glass-panel p-6 rounded-2xl border border-yellow-900/40 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-yellow-950/80 border border-yellow-500/40 flex items-center justify-center text-yellow-400 text-lg">
               <i class="fa-solid fa-microchip"></i>
             </div>
             <h4 class="font-orbitron font-bold text-sm text-white">SoC & CPU</h4>
-            <p class="text-slate-400 font-sans text-xs">Qualcomm Snapdragon 7s Gen 2 (SM7450 / 4nm TSMC)</p>
-            <div class="text-slate-300 space-y-1 pt-1 border-t border-slate-800/80 text-[11px]">
+            <p class="text-amber-200/70 font-sans text-xs">Qualcomm Snapdragon 7s Gen 2 (SM7450 / 4nm TSMC)</p>
+            <div class="text-amber-100 space-y-1 pt-1 border-t border-yellow-900/30 text-[11px]">
               <div>• 4x 2.40 GHz Cortex-A78</div>
               <div>• 4x 1.95 GHz Cortex-A55</div>
               <div>• Adreno 710 GPU</div>
@@ -794,13 +788,13 @@
           </div>
 
           <!-- Display -->
-          <div class="glass-panel p-6 rounded-2xl border border-slate-800 space-y-3">
-            <div class="w-10 h-10 rounded-xl bg-purple-950/80 border border-purple-500/30 flex items-center justify-center text-purple-400 text-lg">
+          <div class="glass-panel p-6 rounded-2xl border border-yellow-900/40 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-950/80 border border-amber-500/40 flex items-center justify-center text-amber-400 text-lg">
               <i class="fa-solid fa-mobile"></i>
             </div>
             <h4 class="font-orbitron font-bold text-sm text-white">Display</h4>
-            <p class="text-slate-400 font-sans text-xs">6.7" Endless Edge Curved pOLED, 1.5K (1220 x 2712)</p>
-            <div class="text-slate-300 space-y-1 pt-1 border-t border-slate-800/80 text-[11px]">
+            <p class="text-amber-200/70 font-sans text-xs">6.7" Endless Edge Curved pOLED, 1.5K (1220 x 2712)</p>
+            <div class="text-amber-100 space-y-1 pt-1 border-t border-yellow-900/30 text-[11px]">
               <div>• 120Hz Smooth Refresh Rate</div>
               <div>• HDR10+ / 1900 nits peak</div>
               <div>• 10-bit / 100% DCI-P3</div>
@@ -808,13 +802,13 @@
           </div>
 
           <!-- Cameras -->
-          <div class="glass-panel p-6 rounded-2xl border border-slate-800 space-y-3">
-            <div class="w-10 h-10 rounded-xl bg-emerald-950/80 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-lg">
+          <div class="glass-panel p-6 rounded-2xl border border-yellow-900/40 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-yellow-950/80 border border-yellow-500/40 flex items-center justify-center text-yellow-400 text-lg">
               <i class="fa-solid fa-camera"></i>
             </div>
             <h4 class="font-orbitron font-bold text-sm text-white">Camera Array</h4>
-            <p class="text-slate-400 font-sans text-xs">Triple Camera Setup with Sony LYT-700C Sensor</p>
-            <div class="text-slate-300 space-y-1 pt-1 border-t border-slate-800/80 text-[11px]">
+            <p class="text-amber-200/70 font-sans text-xs">Triple Camera Setup with Sony LYT-700C Sensor</p>
+            <div class="text-amber-100 space-y-1 pt-1 border-t border-yellow-900/30 text-[11px]">
               <div>• 50 MP Main (Sony LYT-700C, OIS)</div>
               <div>• 10 MP 3x Optical Telephoto (OIS)</div>
               <div>• 13 MP Ultrawide / 32 MP Front</div>
@@ -822,13 +816,13 @@
           </div>
 
           <!-- Battery & Charging -->
-          <div class="glass-panel p-6 rounded-2xl border border-slate-800 space-y-3">
-            <div class="w-10 h-10 rounded-xl bg-amber-950/80 border border-amber-500/30 flex items-center justify-center text-amber-400 text-lg">
+          <div class="glass-panel p-6 rounded-2xl border border-yellow-900/40 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-950/80 border border-amber-500/40 flex items-center justify-center text-amber-400 text-lg">
               <i class="fa-solid fa-battery-three-quarters"></i>
             </div>
             <h4 class="font-orbitron font-bold text-sm text-white">Battery & Power</h4>
-            <p class="text-slate-400 font-sans text-xs">5000 mAh High-Density Li-Po Battery</p>
-            <div class="text-slate-300 space-y-1 pt-1 border-t border-slate-800/80 text-[11px]">
+            <p class="text-amber-200/70 font-sans text-xs">5000 mAh High-Density Li-Po Battery</p>
+            <div class="text-amber-100 space-y-1 pt-1 border-t border-yellow-900/30 text-[11px]">
               <div>• 68W TurboPower Fast Charging</div>
               <div>• 15W Wireless Charging Support</div>
               <div>• Voltage Battery Health Tuning</div>
@@ -836,13 +830,13 @@
           </div>
 
           <!-- Biometrics & Audio -->
-          <div class="glass-panel p-6 rounded-2xl border border-slate-800 space-y-3">
-            <div class="w-10 h-10 rounded-xl bg-indigo-950/80 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-lg">
+          <div class="glass-panel p-6 rounded-2xl border border-yellow-900/40 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-yellow-950/80 border border-yellow-500/40 flex items-center justify-center text-yellow-400 text-lg">
               <i class="fa-solid fa-fingerprint"></i>
             </div>
             <h4 class="font-orbitron font-bold text-sm text-white">Biometrics & Audio</h4>
-            <p class="text-slate-400 font-sans text-xs">Under-Display Optical Fingerprint (Goodix)</p>
-            <div class="text-slate-300 space-y-1 pt-1 border-t border-slate-800/80 text-[11px]">
+            <p class="text-amber-200/70 font-sans text-xs">Under-Display Optical Fingerprint (Goodix)</p>
+            <div class="text-amber-100 space-y-1 pt-1 border-t border-yellow-900/30 text-[11px]">
               <div>• Dual Stereo Speakers + Dolby Atmos</div>
               <div>• Hi-Res Wireless: LDAC, LHDC v5, aptX</div>
               <div>• Low-latency UDFPS unlock</div>
@@ -850,13 +844,13 @@
           </div>
 
           <!-- Storage & Connectivity -->
-          <div class="glass-panel p-6 rounded-2xl border border-slate-800 space-y-3">
-            <div class="w-10 h-10 rounded-xl bg-rose-950/80 border border-rose-500/30 flex items-center justify-center text-rose-400 text-lg">
+          <div class="glass-panel p-6 rounded-2xl border border-yellow-900/40 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-950/80 border border-amber-500/40 flex items-center justify-center text-amber-400 text-lg">
               <i class="fa-solid fa-wifi"></i>
             </div>
             <h4 class="font-orbitron font-bold text-sm text-white">Connectivity</h4>
-            <p class="text-slate-400 font-sans text-xs">5G Sub-6 / Dual SIM / Wi-Fi 6E</p>
-            <div class="text-slate-300 space-y-1 pt-1 border-t border-slate-800/80 text-[11px]">
+            <p class="text-amber-200/70 font-sans text-xs">5G Sub-6 / Dual SIM / Wi-Fi 6E</p>
+            <div class="text-amber-100 space-y-1 pt-1 border-t border-yellow-900/30 text-[11px]">
               <div>• 256GB / 512GB UFS 2.2</div>
               <div>• 8GB / 12GB LPDDR4X RAM</div>
               <div>• Bluetooth 5.2 / NFC</div>
@@ -870,33 +864,33 @@
       <!-- SOURCE CODE & LOCAL MANIFEST SECTION -->
       <section id="source" class="space-y-6 scroll-mt-24">
         
-        <div class="border-b border-slate-800 pb-4">
-          <div class="flex items-center gap-2 text-purple-400 font-mono text-xs uppercase tracking-widest">
+        <div class="border-b border-yellow-900/40 pb-4">
+          <div class="flex items-center gap-2 text-yellow-400 font-mono text-xs uppercase tracking-widest">
             <i class="fa-solid fa-code-branch"></i>
             <span>Developer Matrix</span>
           </div>
           <h2 class="font-orbitron text-2xl sm:text-3xl font-extrabold text-white mt-1">
             Local Manifest & Source Trees
           </h2>
-          <p class="text-xs text-slate-400 font-mono mt-1">
-            Build VoltageOS 6.1 from source for Motorola Edge 50 (<code class="text-cyan-400">tank</code>).
+          <p class="text-xs text-amber-200/60 font-mono mt-1">
+            Build VoltageOS 6.1 from source for Motorola Edge 50 (<code class="text-yellow-400">tank</code>).
           </p>
         </div>
 
-        <div class="glass-panel rounded-2xl border border-slate-800 p-6 space-y-4">
+        <div class="glass-panel rounded-2xl border border-yellow-900/40 p-6 space-y-4">
           
           <div class="flex flex-wrap items-center justify-between gap-3">
             <div class="flex items-center gap-2">
-              <i class="fa-regular fa-file-code text-cyan-400 text-lg"></i>
-              <span class="font-mono text-xs font-semibold text-slate-200">.repo/local_manifests/sm7450.xml</span>
+              <i class="fa-regular fa-file-code text-yellow-400 text-lg"></i>
+              <span class="font-mono text-xs font-semibold text-amber-100">.repo/local_manifests/sm7450.xml</span>
             </div>
-            <button onclick="copyManifest()" class="px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-300 text-xs font-mono flex items-center gap-2 transition-all">
-              <i class="fa-regular fa-copy text-cyan-400"></i>
+            <button onclick="copyManifest()" class="px-3 py-1.5 rounded-lg bg-[#14130d] hover:bg-[#1f1d14] border border-yellow-900/40 text-amber-200 text-xs font-mono flex items-center gap-2 transition-all hover:border-yellow-500/40">
+              <i class="fa-regular fa-copy text-yellow-400"></i>
               <span>Copy Manifest XML</span>
             </button>
           </div>
 
-          <pre id="manifest-code" class="p-4 rounded-xl bg-black/80 border border-slate-800 text-slate-300 font-mono text-xs overflow-x-auto selection:bg-cyan-500 selection:text-black"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+          <pre id="manifest-code" class="p-4 rounded-xl bg-black/90 border border-yellow-900/30 text-amber-100 font-mono text-xs overflow-x-auto selection:bg-yellow-400 selection:text-black"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;manifest&gt;
   &lt;remote name="ajimsjames" fetch="https://github.com/ajimsjames" revision="lineage-24" /&gt;
 
@@ -919,21 +913,21 @@
 
           <!-- Source Repos Grid -->
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 pt-2 font-mono text-xs">
-            <a href="https://github.com/ajimsjames/android_device_motorola_tank" target="_blank" class="p-3 rounded-xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 flex items-center justify-between text-slate-300 hover:text-cyan-400 transition-all">
+            <a href="https://github.com/ajimsjames/android_device_motorola_tank" target="_blank" class="p-3 rounded-xl bg-[#14130d] hover:bg-[#1f1d14] border border-yellow-900/40 flex items-center justify-between text-amber-200 hover:text-yellow-400 transition-all">
               <span>device_motorola_tank</span>
-              <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-500"></i>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-amber-500"></i>
             </a>
-            <a href="https://github.com/ajimsjames/android_device_motorola_sm7450-common" target="_blank" class="p-3 rounded-xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 flex items-center justify-between text-slate-300 hover:text-cyan-400 transition-all">
+            <a href="https://github.com/ajimsjames/android_device_motorola_sm7450-common" target="_blank" class="p-3 rounded-xl bg-[#14130d] hover:bg-[#1f1d14] border border-yellow-900/40 flex items-center justify-between text-amber-200 hover:text-yellow-400 transition-all">
               <span>sm7450-common</span>
-              <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-500"></i>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-amber-500"></i>
             </a>
-            <a href="https://github.com/ajimsjames/android_kernel_motorola_sm7450" target="_blank" class="p-3 rounded-xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 flex items-center justify-between text-slate-300 hover:text-cyan-400 transition-all">
+            <a href="https://github.com/ajimsjames/android_kernel_motorola_sm7450" target="_blank" class="p-3 rounded-xl bg-[#14130d] hover:bg-[#1f1d14] border border-yellow-900/40 flex items-center justify-between text-amber-200 hover:text-yellow-400 transition-all">
               <span>kernel_sm7450</span>
-              <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-500"></i>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-amber-500"></i>
             </a>
-            <a href="https://github.com/ajimsjames/proprietary_vendor_motorola_tank" target="_blank" class="p-3 rounded-xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 flex items-center justify-between text-slate-300 hover:text-cyan-400 transition-all">
+            <a href="https://github.com/ajimsjames/proprietary_vendor_motorola_tank" target="_blank" class="p-3 rounded-xl bg-[#14130d] hover:bg-[#1f1d14] border border-yellow-900/40 flex items-center justify-between text-amber-200 hover:text-yellow-400 transition-all">
               <span>vendor_motorola_tank</span>
-              <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-500"></i>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-amber-500"></i>
             </a>
           </div>
 
@@ -944,32 +938,32 @@
     </main>
 
     <!-- FOOTER HUD -->
-    <footer class="mt-20 border-t border-slate-800/80 bg-[#06080e]/90 backdrop-blur-xl">
+    <footer class="mt-20 border-t border-yellow-900/40 bg-[#080806]/95 backdrop-blur-xl">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div class="flex flex-col md:flex-row items-center justify-between gap-6">
           
           <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center text-slate-950 font-bold">
+            <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-yellow-400 to-amber-500 flex items-center justify-center text-neutral-950 font-bold shadow-neon-thunder">
               <i class="fa-solid fa-bolt text-sm"></i>
             </div>
             <div>
-              <span class="font-orbitron font-bold text-sm text-white">VOLTAGEOS 6.1</span>
-              <p class="font-mono text-xs text-slate-400">Motorola Edge 50 (<span class="text-cyan-400">tank</span>) // UNOFFICIAL by <a href="https://github.com/ajimsjames" class="text-cyan-400 hover:underline">ajugeorge</a></p>
+              <span class="font-orbitron font-bold text-sm text-white">VOLTAGEOS 6.1 // ZENITSU THUNDER</span>
+              <p class="font-mono text-xs text-amber-400/70">Motorola Edge 50 (<span class="text-yellow-400">tank</span>) // UNOFFICIAL by <a href="https://github.com/ajimsjames" class="text-yellow-400 hover:underline">ajugeorge</a></p>
             </div>
           </div>
 
-          <div class="flex items-center gap-4 text-slate-400 text-sm">
-            <a href="https://github.com/ajimsjames/voltageos_tank_releases" target="_blank" title="GitHub Repo" class="hover:text-cyan-400 transition-colors">
+          <div class="flex items-center gap-4 text-amber-400/80 text-sm">
+            <a href="https://github.com/ajimsjames/voltageos_tank_releases" target="_blank" title="GitHub Repo" class="hover:text-yellow-400 transition-colors">
               <i class="fa-brands fa-github text-lg"></i>
             </a>
-            <a href="https://github.com/VoltageOS" target="_blank" title="VoltageOS Source" class="hover:text-cyan-400 transition-colors">
+            <a href="https://github.com/VoltageOS" target="_blank" title="VoltageOS Source" class="hover:text-yellow-400 transition-colors">
               <i class="fa-solid fa-bolt text-lg"></i>
             </a>
           </div>
 
         </div>
 
-        <div class="mt-8 pt-6 border-t border-slate-800/50 text-center font-mono text-[11px] text-slate-500">
+        <div class="mt-8 pt-6 border-t border-yellow-900/30 text-center font-mono text-[11px] text-amber-500/50">
           VoltageOS is an open-source Android after-market firmware. All device trademarks are property of Motorola Mobility LLC.
         </div>
       </div>
@@ -987,10 +981,10 @@
         const btn = document.getElementById(`tab-${t}`);
         if (t === tabId) {
           content.classList.remove('hidden');
-          btn.className = 'px-3 py-1.5 rounded-lg bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 font-semibold transition-all';
+          btn.className = 'px-3 py-1.5 rounded-lg bg-yellow-500/20 text-yellow-400 border border-yellow-500/40 font-semibold transition-all';
         } else {
           content.classList.add('hidden');
-          btn.className = 'px-3 py-1.5 rounded-lg text-slate-400 hover:text-slate-200 transition-all';
+          btn.className = 'px-3 py-1.5 rounded-lg text-amber-300/60 hover:text-amber-100 transition-all';
         }
       });
     }
@@ -1044,7 +1038,7 @@
       });
     });
 
-    // Dynamic GitHub Releases Fetcher
+    // Dynamic GitHub Releases Fetcher (Zenitsu Thunder Style)
     async function fetchLiveReleases() {
       const repo = 'ajimsjames/voltageos_tank_releases';
       const container = document.getElementById('releases-container');
@@ -1058,7 +1052,7 @@
             const isLatest = index === 0;
             const date = rel.published_at ? rel.published_at.split('T')[0] : '2026-09-16';
             const zipAsset = rel.assets.find(a => a.name.endsWith('.zip')) || rel.assets[0];
-            const zipSize = zipAsset ? (zipAsset.size / (1024 * 1024)).toFixed(1) + ' MB' : '~2.1 GB';
+            const zipSize = zipAsset ? (zipAsset.size / (1024 * 1024)).toFixed(1) + ' MB' : '~1.6 GB';
             const downloadUrl = zipAsset ? zipAsset.browser_download_url : rel.html_url;
 
             // Generate direct download buttons for all non-zip assets (img, txt)
@@ -1066,9 +1060,9 @@
             const otherAssets = rel.assets.filter(a => !a.name.endsWith('.zip'));
             if (otherAssets.length > 0) {
               assetsHtml = `
-                <div class="py-4 border-b border-slate-800/60 space-y-2.5">
-                  <div class="flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-wider">
-                    <i class="fa-solid fa-microchip"></i>
+                <div class="py-4 border-b border-yellow-900/40 space-y-2.5">
+                  <div class="flex items-center gap-2 text-yellow-400 font-mono text-xs uppercase tracking-wider">
+                    <i class="fa-solid fa-bolt-lightning"></i>
                     <span>Direct Partition Images & Downloads</span>
                   </div>
                   <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2.5 font-mono text-xs">
@@ -1076,12 +1070,12 @@
               otherAssets.forEach(asset => {
                 const assetSize = (asset.size / (1024 * 1024)).toFixed(2) > 0.05 ? (asset.size / (1024 * 1024)).toFixed(1) + ' MB' : (asset.size / 1024).toFixed(0) + ' KB';
                 const isTxt = asset.name.endsWith('.txt');
-                const icon = isTxt ? 'fa-file-shield text-emerald-400' : 'fa-download text-cyan-400';
+                const icon = isTxt ? 'fa-file-shield text-yellow-400' : 'fa-download text-yellow-400';
                 assetsHtml += `
-                  <a href="${asset.browser_download_url}" target="${isTxt ? '_blank' : '_self'}" class="p-2.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-cyan-500/40 transition-all flex items-center justify-between text-slate-200 group">
+                  <a href="${asset.browser_download_url}" target="${isTxt ? '_blank' : '_self'}" class="p-2.5 rounded-xl bg-[#14130d] hover:bg-[#1f1d14] border border-yellow-900/40 hover:border-yellow-500/50 transition-all flex items-center justify-between text-amber-100 group">
                     <div class="truncate mr-1">
-                      <span class="block font-bold text-white group-hover:text-cyan-400 transition-colors truncate">${asset.name}</span>
-                      <span class="text-[10px] text-slate-500">${assetSize}</span>
+                      <span class="block font-bold text-white group-hover:text-yellow-400 transition-colors truncate">${asset.name}</span>
+                      <span class="text-[10px] text-amber-400/60">${assetSize}</span>
                     </div>
                     <i class="fa-solid ${icon} text-xs flex-shrink-0"></i>
                   </a>
@@ -1091,35 +1085,35 @@
             }
 
             html += `
-              <div class="release-card glass-panel glass-panel-hover rounded-2xl p-6 sm:p-8 border border-slate-800 transition-all duration-300">
-                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-slate-800">
+              <div class="release-card glass-panel glass-panel-hover rounded-2xl p-6 sm:p-8 border border-yellow-900/40 transition-all duration-300">
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-yellow-900/40">
                   <div class="space-y-3">
                     <div class="flex flex-wrap items-center gap-2">
-                      ${isLatest ? '<span class="px-3 py-1 rounded-full bg-cyan-950 text-cyan-400 border border-cyan-500/40 text-xs font-mono font-bold"><i class="fa-solid fa-sparkles mr-1"></i> LATEST RELEASE</span>' : ''}
-                      <span class="px-2.5 py-1 rounded-full bg-amber-950 text-amber-300 border border-amber-500/30 text-xs font-mono">UNOFFICIAL by ajugeorge</span>
-                      <span class="px-2.5 py-1 rounded-full bg-slate-900 text-slate-300 border border-slate-700 text-xs font-mono">Android 17</span>
-                      <span class="px-2.5 py-1 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-500/30 text-xs font-mono">Non-Root</span>
-                      <span class="px-2.5 py-1 rounded-full bg-blue-950 text-blue-300 border border-blue-500/30 text-xs font-mono">Sandboxed GApps</span>
+                      ${isLatest ? '<span class="px-3 py-1 rounded-full bg-yellow-950/80 text-yellow-400 border border-yellow-500/50 text-xs font-mono font-bold"><i class="fa-solid fa-bolt mr-1"></i> LATEST RELEASE</span>' : ''}
+                      <span class="px-2.5 py-1 rounded-full bg-amber-950/80 text-amber-300 border border-amber-500/40 text-xs font-mono">UNOFFICIAL by ajugeorge</span>
+                      <span class="px-2.5 py-1 rounded-full bg-[#17150e] text-amber-100 border border-yellow-900/40 text-xs font-mono">Android 17</span>
+                      <span class="px-2.5 py-1 rounded-full bg-yellow-950/60 text-yellow-300 border border-yellow-500/30 text-xs font-mono">Non-Root</span>
+                      <span class="px-2.5 py-1 rounded-full bg-[#1c1a10] text-amber-200 border border-amber-500/30 text-xs font-mono">Sandboxed GApps</span>
                     </div>
                     <div>
                       <h3 class="font-orbitron text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
                         ${rel.name || rel.tag_name}
                       </h3>
-                      <p class="text-xs font-mono text-slate-400 mt-1 flex items-center gap-4">
-                        <span><i class="fa-regular fa-calendar text-slate-500 mr-1.5"></i> Date: <strong>September 16, 2026 (20260916-1602 UTC)</strong></span>
-                        <span><i class="fa-solid fa-hard-drive text-slate-500 mr-1.5"></i> Size: <strong>${zipSize}</strong></span>
-                        <span><i class="fa-solid fa-tag text-slate-500 mr-1.5"></i> Tag: <strong>${rel.tag_name}</strong></span>
+                      <p class="text-xs font-mono text-amber-200/70 mt-1 flex items-center gap-4">
+                        <span><i class="fa-regular fa-calendar text-yellow-500 mr-1.5"></i> Date: <strong>September 16, 2026 (20260916-1602 UTC)</strong></span>
+                        <span><i class="fa-solid fa-hard-drive text-yellow-500 mr-1.5"></i> Size: <strong>${zipSize}</strong></span>
+                        <span><i class="fa-solid fa-tag text-yellow-500 mr-1.5"></i> Tag: <strong>${rel.tag_name}</strong></span>
                       </p>
                     </div>
                   </div>
 
                   <div class="flex flex-wrap items-center gap-3">
-                    <a href="${downloadUrl}" target="_blank" class="px-5 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-orbitron font-bold text-xs tracking-wider shadow-neon-cyan transition-all flex items-center gap-2">
+                    <a href="${downloadUrl}" target="_blank" class="px-5 py-3 rounded-xl bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 hover:from-yellow-300 hover:to-amber-300 text-neutral-950 font-orbitron font-bold text-xs tracking-wider shadow-neon-thunder transition-all flex items-center gap-2">
                       <i class="fa-solid fa-download"></i>
                       <span>DOWNLOAD ZIP</span>
                     </a>
-                    <a href="${rel.html_url}" target="_blank" class="px-4 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 text-xs font-mono transition-all flex items-center gap-2">
-                      <i class="fa-solid fa-box-open text-purple-400"></i>
+                    <a href="${rel.html_url}" target="_blank" class="px-4 py-3 rounded-xl bg-[#14130d] hover:bg-[#1f1d14] border border-yellow-900/40 text-amber-100 text-xs font-mono transition-all flex items-center gap-2 hover:border-yellow-500/40">
+                      <i class="fa-solid fa-box-open text-yellow-400"></i>
                       <span>GitHub Release</span>
                     </a>
                   </div>
@@ -1128,14 +1122,14 @@
                 ${assetsHtml}
 
                 <details class="group mt-4 cursor-pointer" ${isLatest ? 'open' : ''}>
-                  <summary class="flex items-center justify-between text-xs font-mono font-semibold text-cyan-400 py-2 hover:text-cyan-300 transition-colors select-none list-none">
+                  <summary class="flex items-center justify-between text-xs font-mono font-semibold text-yellow-400 py-2 hover:text-yellow-300 transition-colors select-none list-none">
                     <span class="flex items-center gap-2">
                       <i class="fa-solid fa-list-check"></i>
                       <span>VIEW CHANGELOG & NOTES</span>
                     </span>
                     <i class="fa-solid fa-chevron-down group-open:rotate-180 transition-transform duration-200"></i>
                   </summary>
-                  <div class="mt-4 pt-4 border-t border-slate-800/80 text-xs font-mono text-slate-300 whitespace-pre-wrap leading-relaxed">
+                  <div class="mt-4 pt-4 border-t border-yellow-900/40 text-xs font-mono text-amber-100/90 whitespace-pre-wrap leading-relaxed">
 ${rel.body ? rel.body : '• Initial release'}
                   </div>
                 </details>
