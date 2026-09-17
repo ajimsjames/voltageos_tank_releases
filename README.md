@@ -5,11 +5,11 @@
 [![Android 17](https://img.shields.io/badge/Android-17.0-blue.svg?style=for-the-badge&logo=android)](https://www.android.com/)
 [![VoltageOS](https://img.shields.io/badge/VoltageOS-v6.1-cyan.svg?style=for-the-badge&logo=lightning)](https://github.com/VoltageOS)
 [![Device](https://img.shields.io/badge/Device-Motorola_Edge_50_(tank)-purple.svg?style=for-the-badge&logo=motorola)](https://github.com/ajimsjames/android_device_motorola_tank)
-[![Build Type](https://img.shields.io/badge/Build-Non--Root_Official-green.svg?style=for-the-badge)](https://github.com/ajimsjames/voltageos_tank_releases)
-[![Maintainer](https://img.shields.io/badge/Maintainer-ajimsjames-emerald.svg?style=for-the-badge&logo=github)](https://github.com/ajimsjames)
+[![Build Type](https://img.shields.io/badge/Build-UNOFFICIAL-orange.svg?style=for-the-badge)](https://github.com/ajimsjames/voltageos_tank_releases)
+[![Maintainer](https://img.shields.io/badge/Maintainer-ajugeorge-emerald.svg?style=for-the-badge&logo=github)](https://github.com/ajimsjames)
 [![Website](https://img.shields.io/badge/Release_Portal-Live-00f0ff.svg?style=for-the-badge&logo=google-chrome)](https://ajimsjames.github.io/voltageos_tank_releases/)
 
-**⚡ Pure Performance. Cybernetic Elegance. Android 17 (Non-Root). ⚡**
+**⚡ Pure Performance. Cybernetic Elegance. Android 17 (UNOFFICIAL by ajugeorge). ⚡**
 
 [🌐 **Visit Release Website & Interactive Download Portal**](https://ajimsjames.github.io/voltageos_tank_releases/)
 
@@ -33,6 +33,19 @@
 | **Audio & Codecs** | Stereo Speakers, Dolby Atmos, LDAC (990kbps), aptX HD / Adaptive, LHDC v5 |
 | **Google Apps** | Sandboxed Edition |
 | **Build Configuration** | Non-Root (SELinux Enforcing) |
+
+---
+
+## ⚙️ Build & Kernel Information
+
+| Attribute | Value |
+| :--- | :--- |
+| **Maintainer** | ajugeorge (`UNOFFICIAL by ajugeorge`) |
+| **Build Date** | September 16, 2026 (20260916-1602 UTC) |
+| **Build ID** | `CP2A.260605.016` |
+| **Android Security Patch** | September 1, 2026 (2026-09-01) |
+| **Kernel Version** | `5.10.260-gki-g822fb9c274c6` (GKI 5.10) |
+| **Kernel Toolchain** | `Clang 22.0.2 + LLD 22.0.2 (+pgo, +bolt, +lto, +mlgo)` |
 
 ---
 
@@ -80,7 +93,7 @@ Browse all builds, mirrors, and fastboot images directly on our [**Release Porta
 4. In Recovery, perform a **Factory Reset / Format Data** (`Wipe data/factory reset`).
 5. Select **Apply Update** > **Apply from ADB**, and run:
    ```bash
-   adb sideload voltage-6.1-tank-OFFICIAL.zip
+   adb sideload voltage-6.1-tank-UNOFFICIAL.zip
    ```
 6. Reboot System and enjoy VoltageOS!
 
@@ -114,7 +127,7 @@ To build VoltageOS 6.1 for Motorola Edge 50 (`tank`):
 
 ## 🤝 Maintainer & Credits
 
-- **Device Maintainer**: [AJIMS JAMES](https://github.com/ajimsjames)
+- **Device Maintainer**: ajugeorge ([ajimsjames](https://github.com/ajimsjames))
 - **VoltageOS Team**: [VoltageOS GitHub](https://github.com/VoltageOS)
 - **Motorola Mobility LLC**: For kernel sources and device components
 
