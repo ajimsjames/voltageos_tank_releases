@@ -93,7 +93,7 @@ Browse all builds, mirrors, and fastboot images directly on our [**Release Porta
 4. In Recovery, perform a **Factory Reset / Format Data** (`Wipe data/factory reset`).
 5. Select **Apply Update** > **Apply from ADB**, and run:
    ```bash
-   adb sideload voltage-6.1-tank-UNOFFICIAL.zip
+   adb sideload voltage-6.1-tank-***.zip
    ```
 6. Reboot System and enjoy VoltageOS!
 
