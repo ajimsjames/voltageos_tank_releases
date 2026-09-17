@@ -5,11 +5,11 @@
 [![Android 17](https://img.shields.io/badge/Android-17.0-blue.svg?style=for-the-badge&logo=android)](https://www.android.com/)
 [![VoltageOS](https://img.shields.io/badge/VoltageOS-v6.1-cyan.svg?style=for-the-badge&logo=lightning)](https://github.com/VoltageOS)
 [![Device](https://img.shields.io/badge/Device-Motorola_Edge_50_(tank)-purple.svg?style=for-the-badge&logo=motorola)](https://github.com/ajimsjames/android_device_motorola_tank)
-[![Build Type](https://img.shields.io/badge/Build-Non--Root_Official-green.svg?style=for-the-badge&logo=googleplay)](https://github.com/ajimsjames/voltageos_tank_releases)
+[![Build Type](https://img.shields.io/badge/Build-Non--Root_Official-green.svg?style=for-the-badge)](https://github.com/ajimsjames/voltageos_tank_releases)
 [![Maintainer](https://img.shields.io/badge/Maintainer-ajimsjames-emerald.svg?style=for-the-badge&logo=github)](https://github.com/ajimsjames)
 [![Website](https://img.shields.io/badge/Release_Portal-Live-00f0ff.svg?style=for-the-badge&logo=google-chrome)](https://ajimsjames.github.io/voltageos_tank_releases/)
 
-**⚡ Pure Performance. Cybernetic Elegance. Android 17 (Non-Root / Pure Stock Security). ⚡**
+**⚡ Pure Performance. Cybernetic Elegance. Android 17 (Non-Root). ⚡**
 
 [🌐 **Visit Release Website & Interactive Download Portal**](https://ajimsjames.github.io/voltageos_tank_releases/)
 
@@ -31,22 +31,23 @@
 | **Battery & Charging** | 5000 mAh, 68W TurboPower wired, 15W wireless |
 | **Security / Biometrics**| Under-display Optical Fingerprint (Goodix UDFPS), Face Unlock |
 | **Audio & Codecs** | Stereo Speakers, Dolby Atmos, LDAC (990kbps), aptX HD / Adaptive, LHDC v5 |
-| **Kernel / Root** | **Pure Non-Root Stock Kernel** (SELinux Enforcing, Banking & Play Integrity 100% Ready) |
+| **Google Apps** | Sandboxed Edition |
+| **Build Configuration** | Non-Root (SELinux Enforcing) |
 
 ---
 
-## ⚡ Key Highlights & Features
+## ⚡ Highlights
 
-- **VoltageOS 6.1 (Android 17)**: Silky smooth UI, customized power settings, and advanced thermal profiles.
-- **Non-Root & Uncompromised Security**: Pure stock kernel configuration without root hooks—banking apps, UPI, and work profiles work seamlessly out of the box.
-- **Play Integrity Passed**: Passes Google Play Integrity (Device & Basic Integrity) out-of-the-box.
-- **Complete Hardware Support**: 120Hz dynamic refresh rate, Sony LYT-700C camera sensor pipeline, UDFPS, Fast Charging 68W, and Hi-Res wireless audio codecs.
+- **VoltageOS 6.1 (Android 17)**: Smooth UI, custom power settings, and refined thermal controls.
+- **Non-Root Build**: Pure stock kernel configuration.
+- **Sandboxed GApps**: Privacy-friendly Sandboxed Google Apps edition included.
+- **Hardware Integration**: 120Hz dynamic refresh rate, Sony LYT-700C camera sensor pipeline, UDFPS, Fast Charging 68W, and Hi-Res wireless audio codecs.
 
 ---
 
 ## 📥 Download Links
 
-Browse all builds, mirrors, changelogs, and fastboot images directly on our [**Interactive Release Portal**](https://ajimsjames.github.io/voltageos_tank_releases/).
+Browse all builds, mirrors, and fastboot images directly on our [**Release Portal**](https://ajimsjames.github.io/voltageos_tank_releases/).
 
 - **GitHub Releases**: [Releases Page](https://github.com/ajimsjames/voltageos_tank_releases/releases)
 
