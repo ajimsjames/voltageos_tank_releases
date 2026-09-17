@@ -181,17 +181,43 @@
         </nav>
 
         <!-- Action / External Hub -->
-        <div class="flex items-center gap-3">
-          <a href="https://github.com/ajimsjames/voltageos_tank_releases" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-[#14130d] hover:bg-[#1a1810] border border-yellow-900/40 text-amber-100 text-xs font-mono font-medium flex items-center gap-2 transition-all hover:border-yellow-500/50">
+        <div class="flex items-center gap-2 sm:gap-3">
+          <a href="https://github.com/ajimsjames/voltageos_tank_releases" target="_blank" rel="noopener" class="hidden sm:flex px-3 sm:px-4 py-2 rounded-xl bg-[#14130d] hover:bg-[#1a1810] border border-yellow-900/40 text-amber-100 text-xs font-mono font-medium items-center gap-2 transition-all hover:border-yellow-500/50">
             <i class="fa-brands fa-github text-sm text-yellow-400"></i>
-            <span class="hidden sm:inline">GitHub</span>
+            <span>GitHub</span>
           </a>
-          <a href="#releases" class="px-4 py-2 rounded-xl bg-gradient-to-r from-yellow-400 to-amber-500 text-neutral-950 font-bold text-xs tracking-wide shadow-neon-thunder hover:opacity-95 transition-all flex items-center gap-1.5">
+          <a href="#releases" class="px-3.5 sm:px-4 py-2 rounded-xl bg-gradient-to-r from-yellow-400 to-amber-500 text-neutral-950 font-bold text-xs tracking-wide shadow-neon-thunder hover:opacity-95 transition-all flex items-center gap-1.5">
             <i class="fa-solid fa-download"></i>
             <span>GET ROM</span>
           </a>
+          <!-- Mobile Hamburger Toggle -->
+          <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden w-10 h-10 rounded-xl bg-[#14130d] border border-yellow-900/50 flex items-center justify-center text-yellow-400 focus:outline-none" aria-label="Toggle Navigation Menu">
+            <i id="mobile-menu-icon" class="fa-solid fa-bars text-lg"></i>
+          </button>
         </div>
 
+      </div>
+
+      <!-- Mobile Dropdown Navigation Drawer -->
+      <div id="mobile-menu" class="hidden md:hidden border-t border-yellow-900/30 bg-[#0c0b08]/95 backdrop-blur-2xl px-4 py-4 space-y-2 font-mono text-sm">
+        <a href="#releases" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-amber-100 hover:bg-yellow-950/40 hover:text-yellow-400 transition-colors flex items-center gap-3">
+          <i class="fa-solid fa-layer-group text-yellow-500 w-5"></i> Releases
+        </a>
+        <a href="#build-info" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-amber-100 hover:bg-yellow-950/40 hover:text-yellow-400 transition-colors flex items-center gap-3">
+          <i class="fa-solid fa-circle-info text-yellow-500 w-5"></i> Build & Kernel
+        </a>
+        <a href="#flashing" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-amber-100 hover:bg-yellow-950/40 hover:text-yellow-400 transition-colors flex items-center gap-3">
+          <i class="fa-solid fa-terminal text-yellow-500 w-5"></i> Flashing Guide
+        </a>
+        <a href="#specs" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-amber-100 hover:bg-yellow-950/40 hover:text-yellow-400 transition-colors flex items-center gap-3">
+          <i class="fa-solid fa-microchip text-yellow-500 w-5"></i> Hardware Specs
+        </a>
+        <a href="#source" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl text-amber-100 hover:bg-yellow-950/40 hover:text-yellow-400 transition-colors flex items-center gap-3">
+          <i class="fa-solid fa-code-branch text-yellow-500 w-5"></i> Local Manifest
+        </a>
+        <a href="issues.html" class="block px-4 py-2.5 rounded-xl bg-yellow-500/15 text-yellow-400 border border-yellow-500/30 font-bold transition-colors flex items-center gap-3">
+          <i class="fa-solid fa-bug text-yellow-400 w-5"></i> Report an Issue
+        </a>
       </div>
     </header>
 
@@ -1000,6 +1026,21 @@
 
   <!-- Interactive JavaScript Logic -->
   <script>
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const icon = document.getElementById('mobile-menu-icon');
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-xmark');
+      } else {
+        menu.classList.add('hidden');
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+      }
+    }
+
     // Tab Switching Function
     function switchTab(tabId) {
       const tabs = ['clean', 'dirty'];
