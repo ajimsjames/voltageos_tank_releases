@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VoltageOS 6.1 // Motorola Edge 50 (tank)</title>
+  <meta name="description" content="Official VoltageOS 6.1 (Android 17) Release Hub for Motorola Edge 50 (tank / SM7450). High performance, KernelSU-Next integrated custom ROM with changelogs and installation guides.">
+  <meta name="theme-color" content="#080c14">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="VoltageOS 6.1 | Motorola Edge 50 (tank)">
+  <meta property="og:description" content="Futuristic, hyper-optimized Android 17 custom ROM for Motorola Edge 50. Download builds, view changelogs, and flashing guides.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ajimsjames.github.io/voltageos_tank_releases/">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            orbitron: ['Orbitron', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            cyber: {
+              bg: '#06080e',
+              card: '#0b101b',
+              cardBorder: '#1e293b',
+              accent: '#00f0ff',
+              neonPurple: '#a855f7',
+              neonPink: '#ec4899',
+              neonGreen: '#10b981',
+              neonAmber: '#f59e0b',
+              surface: '#0f172a'
+            }
+          },
+          boxShadow: {
+            'neon-cyan': '0 0 25px -5px rgba(0, 240, 255, 0.4)',
+            'neon-purple': '0 0 25px -5px rgba(168, 85, 247, 0.4)',
+            'glow-card': '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Futuristic Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #06080e; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #00f0ff; }
+
+    /* Futuristic Grid Background */
+    .bg-cyber-grid {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+
+    .glass-panel {
+      background: rgba(11, 16, 27, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .glass-panel-hover:hover {
+      border-color: rgba(0, 240, 255, 0.4);
+      box-shadow: 0 0 30px -8px rgba(0, 240, 255, 0.25);
+      transform: translateY(-2px);
+    }
+
+    .glow-text-cyan {
+      text-shadow: 0 0 16px rgba(0, 240, 255, 0.6);
+    }
+
+    .glow-text-purple {
+      text-shadow: 0 0 16px rgba(168, 85, 247, 0.6);
+    }
+
+    @keyframes pulse-slow {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.08); }
+    }
+
+    .animate-pulse-slow {
+      animation: pulse-slow 8s infinite ease-in-out;
+    }
+  </style>
+</head>
+
+<body class="bg-[#06080e] text-slate-200 antialiased selection:bg-[#00f0ff] selection:text-black min-h-screen relative overflow-x-hidden">
+
+  <!-- Ambient Lighting Effects -->
+  <div class="fixed top-[-10%] left-[-10%] w-[550px] h-[550px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none animate-pulse-slow"></div>
+  <div class="fixed bottom-[10%] right-[-10%] w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[160px] pointer-events-none animate-pulse-slow" style="animation-delay: 4s;"></div>
+
+  <!-- Background Cyber Grid -->
+  <div class="fixed inset-0 bg-cyber-grid pointer-events-none z-0"></div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-3 px-5 py-3 rounded-xl bg-slate-900/90 text-white border border-cyan-500/40 shadow-neon-cyan backdrop-blur-md">
+    <i class="fa-solid fa-circle-check text-cyan-400 text-lg"></i>
+    <span id="toast-message" class="text-sm font-medium">Copied to clipboard!</span>
+  </div>
+
+  <div class="relative z-10 flex flex-col min-h-screen">
+    
+    <!-- Top Cyber HUD Navbar -->
+    <header class="sticky top-0 z-40 border-b border-slate-800/80 bg-[#06080e]/80 backdrop-blur-xl">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        
+        <!-- Brand Logo -->
+        <a href="#" class="flex items-center gap-3.5 group">
+          <div class="relative w-11 h-11 rounded-xl bg-gradient-to-br from-cyan-500 via-indigo-600 to-purple-600 p-[1px] shadow-neon-cyan group-hover:scale-105 transition-transform duration-300">
+            <div class="w-full h-full bg-[#070b14] rounded-xl flex items-center justify-center">
+              <i class="fa-solid fa-bolt-lightning text-cyan-400 text-xl group-hover:text-cyan-300 transition-colors"></i>
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-orbitron font-extrabold text-xl tracking-wider bg-gradient-to-r from-cyan-400 via-purple-300 to-indigo-400 bg-clip-text text-transparent">VOLTAGE<span class="text-cyan-400">OS</span></span>
+              <span class="px-2 py-0.5 text-[10px] font-mono uppercase tracking-widest rounded bg-cyan-950/80 text-cyan-400 border border-cyan-500/30">v6.1</span>
+            </div>
+            <p class="text-xs text-slate-400 font-mono">Motorola Edge 50 // <span class="text-slate-300 font-semibold">tank</span></p>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-1 font-mono text-xs">
+          <a href="#releases" class="px-4 py-2 rounded-lg text-slate-300 hover:text-cyan-400 hover:bg-slate-800/50 transition-all flex items-center gap-2">
+            <i class="fa-solid fa-layer-group text-slate-500"></i> Releases
+          </a>
+          <a href="#flashing" class="px-4 py-2 rounded-lg text-slate-300 hover:text-cyan-400 hover:bg-slate-800/50 transition-all flex items-center gap-2">
+            <i class="fa-solid fa-terminal text-slate-500"></i> Flashing Guide
+          </a>
+          <a href="#specs" class="px-4 py-2 rounded-lg text-slate-300 hover:text-cyan-400 hover:bg-slate-800/50 transition-all flex items-center gap-2">
+            <i class="fa-solid fa-microchip text-slate-500"></i> Specs
+          </a>
+          <a href="#source" class="px-4 py-2 rounded-lg text-slate-300 hover:text-cyan-400 hover:bg-slate-800/50 transition-all flex items-center gap-2">
+            <i class="fa-solid fa-code-branch text-slate-500"></i> Manifest
+          </a>
+        </nav>
+
+        <!-- Action / External Hub -->
+        <div class="flex items-center gap-3">
+          <a href="https://github.com/ajimsjames/voltageos_tank_releases" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 text-xs font-mono font-medium flex items-center gap-2 transition-all hover:border-cyan-500/50">
+            <i class="fa-brands fa-github text-sm"></i>
+            <span class="hidden sm:inline">GitHub</span>
+          </a>
+          <a href="#releases" class="px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 font-semibold text-xs tracking-wide shadow-neon-cyan hover:opacity-95 hover:shadow-cyan-500/50 transition-all flex items-center gap-1.5">
+            <i class="fa-solid fa-download"></i>
+            <span>GET ROM</span>
+          </a>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
+
+      <!-- Hero Cyber Matrix Banner -->
+      <section class="relative rounded-3xl overflow-hidden glass-panel border border-slate-800/80 p-8 sm:p-12">
+        <div class="absolute -right-20 -top-20 w-96 h-96 bg-gradient-to-bl from-cyan-500/20 via-purple-600/10 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <!-- Hero Info -->
+          <div class="lg:col-span-8 space-y-6">
+            
+            <!-- Live Chipset Status Badge -->
+            <div class="inline-flex flex-wrap items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/90 border border-cyan-500/30 text-xs font-mono text-cyan-300">
+              <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+              <span class="font-bold">MOTOROLA EDGE 50</span>
+              <span class="text-slate-600">|</span>
+              <span>CODENAME: <strong class="text-white">tank</strong></span>
+              <span class="text-slate-600">|</span>
+              <span class="text-emerald-400"><i class="fa-solid fa-shield-halved"></i> ENFORCING</span>
+            </div>
+
+            <!-- Title -->
+            <h1 class="font-orbitron text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-none text-white">
+              VOLTAGE<span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-400">OS</span>
+              <span class="block text-2xl sm:text-3xl lg:text-4xl text-slate-400 font-sans font-bold mt-2">
+                Pure Electrified Android 17
+              </span>
+            </h1>
+
+            <!-- Description -->
+            <p class="text-slate-300 text-base sm:text-lg max-w-2xl font-normal leading-relaxed">
+              Experience unparalleled fluidity, aggressive thermal & battery optimization, clean Voltage customizations, and deep <strong>KernelSU-Next</strong> root integration tailored for the <strong>Snapdragon 7s Gen 2 (SM7450)</strong>.
+            </p>
+
+            <!-- Quick Specs Row -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+              <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                <span class="block text-[10px] font-mono uppercase text-slate-500">Android Version</span>
+                <span class="font-orbitron font-bold text-sm text-cyan-400">17.0 (Baklava)</span>
+              </div>
+              <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                <span class="block text-[10px] font-mono uppercase text-slate-500">VoltageOS Version</span>
+                <span class="font-orbitron font-bold text-sm text-purple-400">v6.1 Official</span>
+              </div>
+              <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                <span class="block text-[10px] font-mono uppercase text-slate-500">Kernel Root</span>
+                <span class="font-orbitron font-bold text-sm text-emerald-400">KernelSU-Next</span>
+              </div>
+              <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                <span class="block text-[10px] font-mono uppercase text-slate-500">Maintainer</span>
+                <span class="font-orbitron font-bold text-sm text-amber-400">ajimsjames</span>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap gap-4 pt-4">
+              <a href="#releases" class="px-6 py-3.5 rounded-xl bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-orbitron font-bold text-sm tracking-wider shadow-neon-cyan transition-all flex items-center gap-2">
+                <i class="fa-solid fa-cloud-arrow-down"></i>
+                <span>DOWNLOAD BUILDS</span>
+              </a>
+              <a href="#flashing" class="px-6 py-3.5 rounded-xl glass-panel hover:bg-slate-800/80 text-slate-200 font-mono text-sm font-semibold transition-all border border-slate-700 flex items-center gap-2">
+                <i class="fa-solid fa-book-sparkles text-cyan-400"></i>
+                <span>Flashing Instructions</span>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Hero Graphic HUD Card -->
+          <div class="lg:col-span-4 flex justify-center">
+            <div class="w-full max-w-sm rounded-2xl glass-panel border border-cyan-500/30 p-6 relative shadow-neon-cyan">
+              <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-4">
+                <div class="flex items-center gap-2">
+                  <div class="w-3 h-3 rounded-full bg-cyan-400 animate-pulse"></div>
+                  <span class="font-mono text-xs font-semibold text-cyan-400">SYS_STATUS // ONLINE</span>
+                </div>
+                <span class="font-mono text-[10px] text-slate-500">ID: TANK-SM7450</span>
+              </div>
+              
+              <div class="space-y-3 font-mono text-xs">
+                <div class="flex justify-between py-1 border-b border-slate-800/50">
+                  <span class="text-slate-400">Platform</span>
+                  <span class="text-slate-200">Qualcomm SM7450</span>
+                </div>
+                <div class="flex justify-between py-1 border-b border-slate-800/50">
+                  <span class="text-slate-400">Security Patch</span>
+                  <span class="text-emerald-400 font-semibold">Latest Upstream</span>
+                </div>
+                <div class="flex justify-between py-1 border-b border-slate-800/50">
+                  <span class="text-slate-400">SELinux</span>
+                  <span class="text-cyan-400">Enforcing</span>
+                </div>
+                <div class="flex justify-between py-1 border-b border-slate-800/50">
+                  <span class="text-slate-400">Play Integrity</span>
+                  <span class="text-emerald-400">Pass (Basic & Device)</span>
+                </div>
+                <div class="flex justify-between py-1 border-b border-slate-800/50">
+                  <span class="text-slate-400">Kernel Version</span>
+                  <span class="text-slate-200">6.1.x-KSU-Next</span>
+                </div>
+                <div class="flex justify-between py-1">
+                  <span class="text-slate-400">GApps</span>
+                  <span class="text-purple-400 font-bold">Included</span>
+                </div>
+              </div>
+
+              <div class="mt-5 pt-4 border-t border-slate-800 flex items-center justify-between text-[11px] font-mono text-slate-400">
+                <span>OTA Updates</span>
+                <span class="text-cyan-400 font-semibold"><i class="fa-solid fa-check"></i> Supported</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- RELEASES SECTION -->
+      <section id="releases" class="space-y-6 scroll-mt-24">
+        
+        <!-- Section Header -->
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-slate-800 pb-4">
+          <div>
+            <div class="flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-widest">
+              <i class="fa-solid fa-box-archive"></i>
+              <span>Voltage Repository</span>
+            </div>
+            <h2 class="font-orbitron text-2xl sm:text-3xl font-extrabold text-white mt-1">
+              Available Releases & Builds
+            </h2>
+          </div>
+          
+          <!-- Filter / Search Tools -->
+          <div class="flex items-center gap-3">
+            <div class="relative">
+              <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 text-xs"></i>
+              <input type="text" id="release-search" placeholder="Search version, date..." class="pl-9 pr-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-200 focus:outline-none focus:border-cyan-400 font-mono w-48 sm:w-64 transition-all">
+            </div>
+            <button id="refresh-releases" title="Fetch live GitHub releases" class="p-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-cyan-400 hover:border-cyan-500/50 transition-all text-xs">
+              <i class="fa-solid fa-arrows-rotate"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Release Cards Container (Dynamically Populated + Fallbacks) -->
+        <div id="releases-container" class="grid grid-cols-1 gap-6">
+          
+          <!-- Primary Featured Build Card -->
+          <div class="release-card glass-panel glass-panel-hover rounded-2xl p-6 sm:p-8 border border-slate-800 transition-all duration-300">
+            
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-slate-800">
+              
+              <!-- Release Title & Badges -->
+              <div class="space-y-3">
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="px-3 py-1 rounded-full bg-cyan-950 text-cyan-400 border border-cyan-500/40 text-xs font-mono font-bold">
+                    <i class="fa-solid fa-sparkles mr-1"></i> LATEST RELEASE
+                  </span>
+                  <span class="px-2.5 py-1 rounded-full bg-purple-950 text-purple-300 border border-purple-500/30 text-xs font-mono">
+                    OFFICIAL
+                  </span>
+                  <span class="px-2.5 py-1 rounded-full bg-slate-900 text-slate-300 border border-slate-700 text-xs font-mono">
+                    Android 17
+                  </span>
+                  <span class="px-2.5 py-1 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-500/30 text-xs font-mono">
+                    <i class="fa-solid fa-shield-cat mr-1"></i> KernelSU-Next
+                  </span>
+                </div>
+                
+                <div>
+                  <h3 class="font-orbitron text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+                    VoltageOS-6.1-tank-OFFICIAL.zip
+                  </h3>
+                  <p class="text-xs font-mono text-slate-400 mt-1 flex items-center gap-4">
+                    <span><i class="fa-regular fa-calendar text-slate-500 mr-1.5"></i> Date: <strong>2026-09-17</strong></span>
+                    <span><i class="fa-solid fa-hard-drive text-slate-500 mr-1.5"></i> Size: <strong>~2.1 GB</strong></span>
+                    <span><i class="fa-solid fa-code-commit text-slate-500 mr-1.5"></i> Tag: <strong>v6.1-tank</strong></span>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Download Action Group -->
+              <div class="flex flex-wrap items-center gap-3">
+                <a href="https://github.com/ajimsjames/voltageos_tank_releases/releases" target="_blank" class="px-5 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-orbitron font-bold text-xs tracking-wider shadow-neon-cyan transition-all flex items-center gap-2">
+                  <i class="fa-solid fa-download"></i>
+                  <span>DOWNLOAD ZIP</span>
+                </a>
+                <a href="https://github.com/ajimsjames/voltageos_tank_releases/releases" target="_blank" class="px-4 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 text-xs font-mono transition-all flex items-center gap-2">
+                  <i class="fa-solid fa-box-open text-purple-400"></i>
+                  <span>All Artifacts</span>
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Checksums & Quick Commands -->
+            <div class="py-4 border-b border-slate-800/60 grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-mono">
+              <div class="flex items-center justify-between p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                <div class="truncate mr-2">
+                  <span class="text-slate-500 block text-[10px]">MD5 CHECKSUM</span>
+                  <span class="text-slate-300 font-mono select-all">a4f9b8c2d1e0394857b39f1c7e902a1d</span>
+                </div>
+                <button onclick="copyText('a4f9b8c2d1e0394857b39f1c7e902a1d')" class="p-2 text-slate-400 hover:text-cyan-400 transition-colors">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </div>
+
+              <div class="flex items-center justify-between p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                <div class="truncate mr-2">
+                  <span class="text-slate-500 block text-[10px]">FASTBOOT FLASH COMMAND</span>
+                  <span class="text-cyan-300 font-mono truncate block">adb sideload voltage-6.1-tank-OFFICIAL.zip</span>
+                </div>
+                <button onclick="copyText('adb sideload voltage-6.1-tank-OFFICIAL.zip')" class="p-2 text-slate-400 hover:text-cyan-400 transition-colors">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Expandable Changelog Section -->
+            <details class="group mt-4 cursor-pointer">
+              <summary class="flex items-center justify-between text-xs font-mono font-semibold text-cyan-400 py-2 hover:text-cyan-300 transition-colors select-none list-none">
+                <span class="flex items-center gap-2">
+                  <i class="fa-solid fa-list-check"></i>
+                  <span>VIEW DETAILED CHANGELOG & NOTES</span>
+                </span>
+                <i class="fa-solid fa-chevron-down group-open:rotate-180 transition-transform duration-200"></i>
+              </summary>
+
+              <div class="mt-4 pt-4 border-t border-slate-800/80 space-y-4 text-xs font-sans text-slate-300">
+                
+                <!-- Device Changelog -->
+                <div>
+                  <h4 class="font-mono text-xs uppercase tracking-wider text-cyan-400 font-bold mb-2 flex items-center gap-2">
+                    <i class="fa-solid fa-mobile-screen"></i> Device Specific Changes (Motorola Edge 50 / tank):
+                  </h4>
+                  <ul class="list-disc list-inside space-y-1 text-slate-300 ml-2 font-mono text-[12px]">
+                    <li>Initial official release of VoltageOS 6.1 (Android 17) for <strong>tank</strong>.</li>
+                    <li>Full support for Snapdragon 7s Gen 2 (SM7450) hardware decoders and performance governor.</li>
+                    <li>Enabled smooth 120Hz dynamic refresh rate with per-app refresh rate settings.</li>
+                    <li>Optimized Sony LYT-700C 50MP sensor pipeline and telephoto zoom stability.</li>
+                    <li>Integrated Goodix Under-Display Fingerprint Sensor (UDFPS) custom icons and rapid wake.</li>
+                    <li>TurboPower 68W fast charging profile tuned with thermal safeguards.</li>
+                    <li>Full LDAC, aptX Adaptive, and LHDC v5 wireless audio codec support enabled.</li>
+                  </ul>
+                </div>
+
+                <!-- Kernel & Root Changelog -->
+                <div>
+                  <h4 class="font-mono text-xs uppercase tracking-wider text-emerald-400 font-bold mb-2 flex items-center gap-2">
+                    <i class="fa-solid fa-microchip"></i> Kernel & Root Enhancements:
+                  </h4>
+                  <ul class="list-disc list-inside space-y-1 text-slate-300 ml-2 font-mono text-[12px]">
+                    <li>Kernel upstreamed to latest 6.1 LTS baseline with vendor optimizations.</li>
+                    <li>Built-in <strong>KernelSU-Next</strong> support enabled (`CONFIG_KSU=y`).</li>
+                    <li>Passed Google Play Integrity (Basic & Device Integrity) out-of-the-box.</li>
+                  </ul>
+                </div>
+
+                <!-- Source Changelog -->
+                <div>
+                  <h4 class="font-mono text-xs uppercase tracking-wider text-purple-400 font-bold mb-2 flex items-center gap-2">
+                    <i class="fa-solid fa-bolt"></i> VoltageOS 6.1 Core Features:
+                  </h4>
+                  <ul class="list-disc list-inside space-y-1 text-slate-300 ml-2 font-mono text-[12px]">
+                    <li>Rebased on latest Android 17 (Baklava) source tree.</li>
+                    <li>Voltage Hub 6.1 customization engine: Lockscreen clock styles, status bar tuners, quick settings tiles.</li>
+                    <li>Performance boosts with optimized ART runtime compiler flags.</li>
+                  </ul>
+                </div>
+
+              </div>
+            </details>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- FLASHING INSTRUCTIONS & TERMINAL MATRIX -->
+      <section id="flashing" class="space-y-6 scroll-mt-24">
+        
+        <div class="border-b border-slate-800 pb-4">
+          <div class="flex items-center gap-2 text-purple-400 font-mono text-xs uppercase tracking-widest">
+            <i class="fa-solid fa-terminal"></i>
+            <span>Installation Guide</span>
+          </div>
+          <h2 class="font-orbitron text-2xl sm:text-3xl font-extrabold text-white mt-1">
+            Flashing Instructions & Terminal Commands
+          </h2>
+          <p class="text-xs text-slate-400 font-mono mt-1">
+            Follow the steps carefully. Unlocked bootloader and stock Motorola firmware baseline are required.
+          </p>
+        </div>
+
+        <!-- Terminal Tabs & Interactive Shell -->
+        <div class="glass-panel rounded-2xl border border-slate-800 overflow-hidden shadow-glow-card">
+          
+          <!-- Terminal Header & Tab Switcher -->
+          <div class="flex flex-wrap items-center justify-between border-b border-slate-800 px-6 py-4 bg-slate-950/80">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+              <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+              <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+              <span class="font-mono text-xs text-slate-400 ml-2 font-semibold">terminal@voltageos-tank:~#</span>
+            </div>
+
+            <!-- Tab Buttons -->
+            <div class="flex items-center gap-1.5 p-1 bg-slate-900 rounded-xl border border-slate-800 text-xs font-mono">
+              <button onclick="switchTab('clean')" id="tab-clean" class="px-3 py-1.5 rounded-lg bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 font-semibold transition-all">
+                Clean Flash (First Time)
+              </button>
+              <button onclick="switchTab('dirty')" id="tab-dirty" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-slate-200 transition-all">
+                Dirty Flash (Update)
+              </button>
+              <button onclick="switchTab('fastboot')" id="tab-fastboot" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-slate-200 transition-all">
+                Fastboot Flash
+              </button>
+            </div>
+          </div>
+
+          <!-- Tab Content: Clean Flash -->
+          <div id="content-clean" class="p-6 sm:p-8 space-y-6">
+            
+            <div class="p-4 rounded-xl bg-amber-950/30 border border-amber-500/30 text-amber-300 text-xs font-mono flex items-start gap-3">
+              <i class="fa-solid fa-triangle-exclamation text-base mt-0.5"></i>
+              <div>
+                <strong>IMPORTANT:</strong> Clean flash will wipe your device internal storage. Please back up all photos, files, and authenticator keys before starting.
+              </div>
+            </div>
+
+            <ol class="space-y-4 font-mono text-xs">
+              
+              <!-- Step 1 -->
+              <li class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-bold text-cyan-400 flex items-center gap-2">
+                    <span class="w-5 h-5 rounded-full bg-cyan-950 text-cyan-400 border border-cyan-500/40 flex items-center justify-center text-[10px]">1</span>
+                    Reboot phone to Fastboot Mode
+                  </span>
+                  <button onclick="copyText('adb reboot bootloader')" class="text-slate-400 hover:text-cyan-400 text-xs">
+                    <i class="fa-regular fa-copy mr-1"></i> Copy
+                  </button>
+                </div>
+                <div class="bg-black/80 p-3 rounded-lg text-slate-300 border border-slate-800 select-all">
+                  adb reboot bootloader
+                </div>
+              </li>
+
+              <!-- Step 2 -->
+              <li class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-bold text-cyan-400 flex items-center gap-2">
+                    <span class="w-5 h-5 rounded-full bg-cyan-950 text-cyan-400 border border-cyan-500/40 flex items-center justify-center text-[10px]">2</span>
+                    Flash Recovery Partitions
+                  </span>
+                  <button onclick="copyText('fastboot flash boot boot.img\nfastboot flash vendor_boot vendor_boot.img\nfastboot flash dtbo dtbo.img\nfastboot flash recovery recovery.img')" class="text-slate-400 hover:text-cyan-400 text-xs">
+                    <i class="fa-regular fa-copy mr-1"></i> Copy All
+                  </button>
+                </div>
+                <div class="bg-black/80 p-3 rounded-lg text-slate-300 border border-slate-800 space-y-1">
+                  <div>fastboot flash boot boot.img</div>
+                  <div>fastboot flash vendor_boot vendor_boot.img</div>
+                  <div>fastboot flash dtbo dtbo.img</div>
+                  <div>fastboot flash recovery recovery.img</div>
+                </div>
+              </li>
+
+              <!-- Step 3 -->
+              <li class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-bold text-cyan-400 flex items-center gap-2">
+                    <span class="w-5 h-5 rounded-full bg-cyan-950 text-cyan-400 border border-cyan-500/40 flex items-center justify-center text-[10px]">3</span>
+                    Reboot into Recovery & Format Data
+                  </span>
+                  <button onclick="copyText('fastboot reboot recovery')" class="text-slate-400 hover:text-cyan-400 text-xs">
+                    <i class="fa-regular fa-copy mr-1"></i> Copy
+                  </button>
+                </div>
+                <div class="bg-black/80 p-3 rounded-lg text-slate-300 border border-slate-800">
+                  fastboot reboot recovery
+                </div>
+                <p class="text-[11px] text-slate-400 font-sans">
+                  In Recovery menu: Navigate to <strong>Factory Reset</strong> &gt; <strong>Format data/factory reset</strong> and confirm.
+                </p>
+              </li>
+
+              <!-- Step 4 -->
+              <li class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-bold text-cyan-400 flex items-center gap-2">
+                    <span class="w-5 h-5 rounded-full bg-cyan-950 text-cyan-400 border border-cyan-500/40 flex items-center justify-center text-[10px]">4</span>
+                    Sideload VoltageOS Package
+                  </span>
+                  <button onclick="copyText('adb sideload voltage-6.1-tank-OFFICIAL.zip')" class="text-slate-400 hover:text-cyan-400 text-xs">
+                    <i class="fa-regular fa-copy mr-1"></i> Copy
+                  </button>
+                </div>
+                <div class="bg-black/80 p-3 rounded-lg text-slate-300 border border-slate-800">
+                  adb sideload voltage-6.1-tank-OFFICIAL.zip
+                </div>
+                <p class="text-[11px] text-slate-400 font-sans">
+                  In Recovery: Select <strong>Apply Update</strong> &gt; <strong>Apply from ADB</strong>, then run the command above on your computer.
+                </p>
+              </li>
+
+              <!-- Step 5 -->
+              <li class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-bold text-cyan-400 flex items-center gap-2">
+                    <span class="w-5 h-5 rounded-full bg-cyan-950 text-cyan-400 border border-cyan-500/40 flex items-center justify-center text-[10px]">5</span>
+                    Reboot to System
+                  </span>
+                </div>
+                <p class="text-[11px] text-slate-400 font-sans">
+                  Once installation reaches 100% or step 2/2 completes, select <strong>Reboot system now</strong>. Enjoy VoltageOS 6.1!
+                </p>
+              </li>
+
+            </ol>
+
+          </div>
+
+          <!-- Tab Content: Dirty Flash -->
+          <div id="content-dirty" class="p-6 sm:p-8 space-y-6 hidden">
+            <div class="p-4 rounded-xl bg-blue-950/30 border border-blue-500/30 text-blue-300 text-xs font-mono flex items-start gap-3">
+              <i class="fa-solid fa-circle-info text-base mt-0.5"></i>
+              <div>
+                <strong>DIRTY FLASH NOTE:</strong> Used for upgrading from an older VoltageOS build without wiping data.
+              </div>
+            </div>
+
+            <ol class="space-y-4 font-mono text-xs">
+              <li class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
+                <span class="font-bold text-purple-400 block">1. Reboot into Voltage Recovery</span>
+                <div class="bg-black/80 p-3 rounded-lg text-slate-300 border border-slate-800 select-all">
+                  adb reboot recovery
+                </div>
+              </li>
+              <li class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
+                <span class="font-bold text-purple-400 block">2. Sideload New VoltageOS ZIP</span>
+                <div class="bg-black/80 p-3 rounded-lg text-slate-300 border border-slate-800 select-all">
+                  adb sideload voltage-6.1-tank-OFFICIAL.zip
+                </div>
+              </li>
+              <li class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
+                <span class="font-bold text-purple-400 block">3. (Optional) Wipe Dalvik/ART Cache & Reboot</span>
+                <div class="bg-black/80 p-3 rounded-lg text-slate-300 border border-slate-800 select-all">
+                  Select "Reboot system now"
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <!-- Tab Content: Fastboot Flash -->
+          <div id="content-fastboot" class="p-6 sm:p-8 space-y-6 hidden">
+            <div class="p-4 rounded-xl bg-purple-950/30 border border-purple-500/30 text-purple-300 text-xs font-mono flex items-start gap-3">
+              <i class="fa-solid fa-bolt text-base mt-0.5"></i>
+              <div>
+                <strong>FASTBOOTD METHOD:</strong> Flash via fastbootd using extracted partitions or fastboot package.
+              </div>
+            </div>
+
+            <div class="space-y-3 font-mono text-xs">
+              <div class="flex items-center justify-between">
+                <span class="text-slate-400">Execute in fastboot mode:</span>
+                <button onclick="copyText('fastboot reboot fastboot\nfastboot flash boot boot.img\nfastboot flash vendor_boot vendor_boot.img\nfastboot flash dtbo dtbo.img\nfastboot flash --slot=all -w')" class="text-slate-400 hover:text-cyan-400">
+                  <i class="fa-regular fa-copy mr-1"></i> Copy Commands
+                </button>
+              </div>
+              <div class="bg-black/80 p-4 rounded-xl text-slate-300 border border-slate-800 space-y-1">
+                <div>fastboot reboot fastboot</div>
+                <div>fastboot flash boot boot.img</div>
+                <div>fastboot flash vendor_boot vendor_boot.img</div>
+                <div>fastboot flash dtbo dtbo.img</div>
+                <div>fastboot -w</div>
+                <div>fastboot reboot</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- KERNELSU-NEXT INTEGRATION CARD -->
+      <section class="glass-panel rounded-2xl border border-emerald-500/30 p-8 shadow-glow-card relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-8 space-y-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-400 font-mono text-xs font-bold">
+              <i class="fa-solid fa-shield-cat"></i> BUILT-IN KERNEL ROOT
+            </div>
+            <h3 class="font-orbitron text-2xl sm:text-3xl font-bold text-white">
+              KernelSU-Next Pre-Integrated
+            </h3>
+            <p class="text-slate-300 text-sm leading-relaxed font-sans">
+              VoltageOS for Motorola Edge 50 comes compiled with <strong>KernelSU-Next</strong> directly inside the kernel image (`CONFIG_KSU=y`). Enjoy seamless root access without altering system partition, passing Google Play Integrity tests with zero configuration.
+            </p>
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+              <a href="https://github.com/KernelSU-Next/KernelSU-Next/releases" target="_blank" class="px-4 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-mono text-xs font-bold transition-all flex items-center gap-2">
+                <i class="fa-solid fa-download"></i> Get KernelSU Manager APK
+              </a>
+              <a href="https://github.com/ajimsjames/KernelSU-Next" target="_blank" class="px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 font-mono text-xs transition-all flex items-center gap-2">
+                <i class="fa-brands fa-github"></i> KernelSU-Next Source
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-4 p-5 rounded-xl bg-slate-950/80 border border-slate-800 font-mono text-xs space-y-2">
+            <span class="text-emerald-400 font-bold block border-b border-slate-800 pb-2">KSU-Next Setup:</span>
+            <div class="text-slate-300">1. Install VoltageOS 6.1</div>
+            <div class="text-slate-300">2. Install KernelSU Manager app</div>
+            <div class="text-slate-300">3. Grant root & install modules!</div>
+            <div class="pt-2 text-[11px] text-emerald-300">✓ No Magisk or boot patching required</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DEVICE SPECIFICATIONS MATRIX -->
+      <section id="specs" class="space-y-6 scroll-mt-24">
+        
+        <div class="border-b border-slate-800 pb-4">
+          <div class="flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-widest">
+            <i class="fa-solid fa-microchip"></i>
+            <span>Hardware HUD</span>
+          </div>
+          <h2 class="font-orbitron text-2xl sm:text-3xl font-extrabold text-white mt-1">
+            Motorola Edge 50 Technical Specs
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 font-mono text-xs">
+          
+          <!-- SoC & Performance -->
+          <div class="glass-panel p-6 rounded-2xl border border-slate-800 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-cyan-950/80 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-lg">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <h4 class="font-orbitron font-bold text-sm text-white">SoC & CPU</h4>
+            <p class="text-slate-400 font-sans text-xs">Qualcomm Snapdragon 7s Gen 2 (SM7450 / 4nm TSMC)</p>
+            <div class="text-slate-300 space-y-1 pt-1 border-t border-slate-800/80 text-[11px]">
+              <div>• 4x 2.40 GHz Cortex-A78</div>
+              <div>• 4x 1.95 GHz Cortex-A55</div>
+              <div>• Adreno 710 GPU</div>
+            </div>
+          </div>
+
+          <!-- Display -->
+          <div class="glass-panel p-6 rounded-2xl border border-slate-800 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-purple-950/80 border border-purple-500/30 flex items-center justify-center text-purple-400 text-lg">
+              <i class="fa-solid fa-mobile"></i>
+            </div>
+            <h4 class="font-orbitron font-bold text-sm text-white">Display</h4>
+            <p class="text-slate-400 font-sans text-xs">6.7" Endless Edge Curved pOLED, 1.5K (1220 x 2712)</p>
+            <div class="text-slate-300 space-y-1 pt-1 border-t border-slate-800/80 text-[11px]">
+              <div>• 120Hz Smooth Refresh Rate</div>
+              <div>• HDR10+ / 1900 nits peak</div>
+              <div>• 10-bit / 100% DCI-P3</div>
+            </div>
+          </div>
+
+          <!-- Cameras -->
+          <div class="glass-panel p-6 rounded-2xl border border-slate-800 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-950/80 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-lg">
+              <i class="fa-solid fa-camera"></i>
+            </div>
+            <h4 class="font-orbitron font-bold text-sm text-white">Camera Array</h4>
+            <p class="text-slate-400 font-sans text-xs">Triple Camera Setup with Sony LYT-700C Sensor</p>
+            <div class="text-slate-300 space-y-1 pt-1 border-t border-slate-800/80 text-[11px]">
+              <div>• 50 MP Main (Sony LYT-700C, OIS)</div>
+              <div>• 10 MP 3x Optical Telephoto (OIS)</div>
+              <div>• 13 MP Ultrawide / 32 MP Front</div>
+            </div>
+          </div>
+
+          <!-- Battery & Charging -->
+          <div class="glass-panel p-6 rounded-2xl border border-slate-800 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-950/80 border border-amber-500/30 flex items-center justify-center text-amber-400 text-lg">
+              <i class="fa-solid fa-battery-three-quarters"></i>
+            </div>
+            <h4 class="font-orbitron font-bold text-sm text-white">Battery & Power</h4>
+            <p class="text-slate-400 font-sans text-xs">5000 mAh High-Density Li-Po Battery</p>
+            <div class="text-slate-300 space-y-1 pt-1 border-t border-slate-800/80 text-[11px]">
+              <div>• 68W TurboPower Fast Charging</div>
+              <div>• 15W Wireless Charging Support</div>
+              <div>• Voltage Battery Health Tuning</div>
+            </div>
+          </div>
+
+          <!-- Biometrics & Audio -->
+          <div class="glass-panel p-6 rounded-2xl border border-slate-800 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-indigo-950/80 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-lg">
+              <i class="fa-solid fa-fingerprint"></i>
+            </div>
+            <h4 class="font-orbitron font-bold text-sm text-white">Biometrics & Audio</h4>
+            <p class="text-slate-400 font-sans text-xs">Under-Display Optical Fingerprint (Goodix)</p>
+            <div class="text-slate-300 space-y-1 pt-1 border-t border-slate-800/80 text-[11px]">
+              <div>• Dual Stereo Speakers + Dolby Atmos</div>
+              <div>• Hi-Res Wireless: LDAC, LHDC v5, aptX</div>
+              <div>• Low-latency UDFPS unlock</div>
+            </div>
+          </div>
+
+          <!-- Storage & Connectivity -->
+          <div class="glass-panel p-6 rounded-2xl border border-slate-800 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-rose-950/80 border border-rose-500/30 flex items-center justify-center text-rose-400 text-lg">
+              <i class="fa-solid fa-wifi"></i>
+            </div>
+            <h4 class="font-orbitron font-bold text-sm text-white">Connectivity</h4>
+            <p class="text-slate-400 font-sans text-xs">5G Sub-6 / Dual SIM / Wi-Fi 6E</p>
+            <div class="text-slate-300 space-y-1 pt-1 border-t border-slate-800/80 text-[11px]">
+              <div>• 256GB / 512GB UFS 2.2</div>
+              <div>• 8GB / 12GB LPDDR4X RAM</div>
+              <div>• Bluetooth 5.2 / NFC</div>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- SOURCE CODE & LOCAL MANIFEST SECTION -->
+      <section id="source" class="space-y-6 scroll-mt-24">
+        
+        <div class="border-b border-slate-800 pb-4">
+          <div class="flex items-center gap-2 text-purple-400 font-mono text-xs uppercase tracking-widest">
+            <i class="fa-solid fa-code-branch"></i>
+            <span>Developer Matrix</span>
+          </div>
+          <h2 class="font-orbitron text-2xl sm:text-3xl font-extrabold text-white mt-1">
+            Local Manifest & Source Trees
+          </h2>
+          <p class="text-xs text-slate-400 font-mono mt-1">
+            Build VoltageOS 6.1 from source for Motorola Edge 50 (<code class="text-cyan-400">tank</code>).
+          </p>
+        </div>
+
+        <div class="glass-panel rounded-2xl border border-slate-800 p-6 space-y-4">
+          
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-2">
+              <i class="fa-regular fa-file-code text-cyan-400 text-lg"></i>
+              <span class="font-mono text-xs font-semibold text-slate-200">.repo/local_manifests/sm7450.xml</span>
+            </div>
+            <button onclick="copyManifest()" class="px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-300 text-xs font-mono flex items-center gap-2 transition-all">
+              <i class="fa-regular fa-copy text-cyan-400"></i>
+              <span>Copy Manifest XML</span>
+            </button>
+          </div>
+
+          <pre id="manifest-code" class="p-4 rounded-xl bg-black/80 border border-slate-800 text-slate-300 font-mono text-xs overflow-x-auto selection:bg-cyan-500 selection:text-black"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;manifest&gt;
+  &lt;remote name="ajimsjames" fetch="https://github.com/ajimsjames" revision="lineage-24" /&gt;
+
+  &lt;!-- device --&gt;
+  &lt;project name="android_device_motorola_tank" path="device/motorola/tank" remote="ajimsjames" /&gt;
+  &lt;project name="android_device_motorola_sm7450-common" path="device/motorola/sm7450-common" remote="ajimsjames" /&gt;
+
+  &lt;!-- hardware --&gt;
+  &lt;project name="android_hardware_motorola" path="hardware/motorola" remote="ajimsjames" /&gt;
+
+  &lt;!-- vendor --&gt;
+  &lt;project name="proprietary_vendor_motorola_tank" path="vendor/motorola/tank" remote="ajimsjames" /&gt;
+  &lt;project name="proprietary_vendor_motorola_sm7450-common" path="vendor/motorola/sm7450-common" remote="ajimsjames" /&gt;
+  
+  &lt;!-- kernel --&gt;
+  &lt;project name="android_kernel_motorola_sm7450" path="kernel/motorola/sm7450" remote="ajimsjames" /&gt;
+  &lt;project name="android_kernel_motorola_sm7450-modules" path="kernel/motorola/sm7450-modules" remote="ajimsjames" /&gt;
+  &lt;project name="android_kernel_motorola_sm7450-devicetrees" path="kernel/motorola/sm7450-devicetrees" remote="ajimsjames" /&gt;
+&lt;/manifest&gt;</code></pre>
+
+          <!-- Source Repos Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 pt-2 font-mono text-xs">
+            <a href="https://github.com/ajimsjames/android_device_motorola_tank" target="_blank" class="p-3 rounded-xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 flex items-center justify-between text-slate-300 hover:text-cyan-400 transition-all">
+              <span>device_motorola_tank</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-500"></i>
+            </a>
+            <a href="https://github.com/ajimsjames/android_device_motorola_sm7450-common" target="_blank" class="p-3 rounded-xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 flex items-center justify-between text-slate-300 hover:text-cyan-400 transition-all">
+              <span>sm7450-common</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-500"></i>
+            </a>
+            <a href="https://github.com/ajimsjames/android_kernel_motorola_sm7450" target="_blank" class="p-3 rounded-xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 flex items-center justify-between text-slate-300 hover:text-cyan-400 transition-all">
+              <span>kernel_sm7450</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-500"></i>
+            </a>
+            <a href="https://github.com/ajimsjames/proprietary_vendor_motorola_tank" target="_blank" class="p-3 rounded-xl bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 flex items-center justify-between text-slate-300 hover:text-cyan-400 transition-all">
+              <span>vendor_motorola_tank</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-500"></i>
+            </a>
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- FOOTER HUD -->
+    <footer class="mt-20 border-t border-slate-800/80 bg-[#06080e]/90 backdrop-blur-xl">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+          
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center text-slate-950 font-bold">
+              <i class="fa-solid fa-bolt text-sm"></i>
+            </div>
+            <div>
+              <span class="font-orbitron font-bold text-sm text-white">VOLTAGEOS 6.1</span>
+              <p class="font-mono text-xs text-slate-400">Motorola Edge 50 (<span class="text-cyan-400">tank</span>) // Maintained by <a href="https://github.com/ajimsjames" class="text-cyan-400 hover:underline">ajimsjames</a></p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4 text-slate-400 text-sm">
+            <a href="https://github.com/ajimsjames/voltageos_tank_releases" target="_blank" title="GitHub Repo" class="hover:text-cyan-400 transition-colors">
+              <i class="fa-brands fa-github text-lg"></i>
+            </a>
+            <a href="https://github.com/VoltageOS" target="_blank" title="VoltageOS Source" class="hover:text-cyan-400 transition-colors">
+              <i class="fa-solid fa-bolt text-lg"></i>
+            </a>
+          </div>
+
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-slate-800/50 text-center font-mono text-[11px] text-slate-500">
+          VoltageOS is an open-source Android after-market firmware. All device trademarks are property of Motorola Mobility LLC.
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Interactive JavaScript Logic -->
+  <script>
+    // Tab Switching Function
+    function switchTab(tabId) {
+      const tabs = ['clean', 'dirty', 'fastboot'];
+      tabs.forEach(t => {
+        const content = document.getElementById(`content-${t}`);
+        const btn = document.getElementById(`tab-${t}`);
+        if (t === tabId) {
+          content.classList.remove('hidden');
+          btn.className = 'px-3 py-1.5 rounded-lg bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 font-semibold transition-all';
+        } else {
+          content.classList.add('hidden');
+          btn.className = 'px-3 py-1.5 rounded-lg text-slate-400 hover:text-slate-200 transition-all';
+        }
+      });
+    }
+
+    // Toast and Copy Function
+    function copyText(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('Copied to clipboard!');
+      }).catch(() => {
+        showToast('Failed to copy');
+      });
+    }
+
+    function copyManifest() {
+      const manifest = `<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="ajimsjames" fetch="https://github.com/ajimsjames" revision="lineage-24" />
+  <project name="android_device_motorola_tank" path="device/motorola/tank" remote="ajimsjames" />
+  <project name="android_device_motorola_sm7450-common" path="device/motorola/sm7450-common" remote="ajimsjames" />
+  <project name="android_hardware_motorola" path="hardware/motorola" remote="ajimsjames" />
+  <project name="proprietary_vendor_motorola_tank" path="vendor/motorola/tank" remote="ajimsjames" />
+  <project name="proprietary_vendor_motorola_sm7450-common" path="vendor/motorola/sm7450-common" remote="ajimsjames" />
+  <project name="android_kernel_motorola_sm7450" path="kernel/motorola/sm7450" remote="ajimsjames" />
+  <project name="android_kernel_motorola_sm7450-modules" path="kernel/motorola/sm7450-modules" remote="ajimsjames" />
+  <project name="android_kernel_motorola_sm7450-devicetrees" path="kernel/motorola/sm7450-devicetrees" remote="ajimsjames" />
+</manifest>`;
+      copyText(manifest);
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-message');
+      toastMsg.innerText = msg;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 2500);
+    }
+
+    // Search filter for releases
+    document.getElementById('release-search').addEventListener('input', function(e) {
+      const query = e.target.value.toLowerCase();
+      const cards = document.querySelectorAll('.release-card');
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        if (text.includes(query)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+
+    // Dynamic GitHub Releases Fetcher
+    async function fetchLiveReleases() {
+      const repo = 'ajimsjames/voltageos_tank_releases';
+      const container = document.getElementById('releases-container');
+      try {
+        const res = await fetch(`https://api.github.com/repos/${repo}/releases`);
+        if (!res.ok) return;
+        const releases = await res.json();
+        if (releases && releases.length > 0) {
+          // Render dynamic releases from GitHub API
+          let html = '';
+          releases.forEach((rel, index) => {
+            const isLatest = index === 0;
+            const date = rel.published_at ? rel.published_at.split('T')[0] : 'Recent';
+            const zipAsset = rel.assets.find(a => a.name.endsWith('.zip')) || rel.assets[0];
+            const zipSize = zipAsset ? (zipAsset.size / (1024 * 1024)).toFixed(1) + ' MB' : 'N/A';
+            const downloadUrl = zipAsset ? zipAsset.browser_download_url : rel.html_url;
+
+            html += `
+              <div class="release-card glass-panel glass-panel-hover rounded-2xl p-6 sm:p-8 border border-slate-800 transition-all duration-300">
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-slate-800">
+                  <div class="space-y-3">
+                    <div class="flex flex-wrap items-center gap-2">
+                      ${isLatest ? '<span class="px-3 py-1 rounded-full bg-cyan-950 text-cyan-400 border border-cyan-500/40 text-xs font-mono font-bold"><i class="fa-solid fa-sparkles mr-1"></i> LATEST RELEASE</span>' : ''}
+                      <span class="px-2.5 py-1 rounded-full bg-purple-950 text-purple-300 border border-purple-500/30 text-xs font-mono">OFFICIAL</span>
+                      <span class="px-2.5 py-1 rounded-full bg-slate-900 text-slate-300 border border-slate-700 text-xs font-mono">Android 17</span>
+                      <span class="px-2.5 py-1 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-500/30 text-xs font-mono"><i class="fa-solid fa-shield-cat mr-1"></i> KernelSU-Next</span>
+                    </div>
+                    <div>
+                      <h3 class="font-orbitron text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+                        ${rel.name || rel.tag_name}
+                      </h3>
+                      <p class="text-xs font-mono text-slate-400 mt-1 flex items-center gap-4">
+                        <span><i class="fa-regular fa-calendar text-slate-500 mr-1.5"></i> Date: <strong>${date}</strong></span>
+                        <span><i class="fa-solid fa-hard-drive text-slate-500 mr-1.5"></i> Size: <strong>${zipSize}</strong></span>
+                        <span><i class="fa-solid fa-tag text-slate-500 mr-1.5"></i> Tag: <strong>${rel.tag_name}</strong></span>
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex flex-wrap items-center gap-3">
+                    <a href="${downloadUrl}" target="_blank" class="px-5 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-orbitron font-bold text-xs tracking-wider shadow-neon-cyan transition-all flex items-center gap-2">
+                      <i class="fa-solid fa-download"></i>
+                      <span>DOWNLOAD ZIP</span>
+                    </a>
+                    <a href="${rel.html_url}" target="_blank" class="px-4 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 text-xs font-mono transition-all flex items-center gap-2">
+                      <i class="fa-solid fa-box-open text-purple-400"></i>
+                      <span>GitHub Release</span>
+                    </a>
+                  </div>
+                </div>
+
+                <details class="group mt-4 cursor-pointer" ${isLatest ? 'open' : ''}>
+                  <summary class="flex items-center justify-between text-xs font-mono font-semibold text-cyan-400 py-2 hover:text-cyan-300 transition-colors select-none list-none">
+                    <span class="flex items-center gap-2">
+                      <i class="fa-solid fa-list-check"></i>
+                      <span>VIEW RELEASE NOTES & CHANGELOG</span>
+                    </span>
+                    <i class="fa-solid fa-chevron-down group-open:rotate-180 transition-transform duration-200"></i>
+                  </summary>
+                  <div class="mt-4 pt-4 border-t border-slate-800/80 text-xs font-mono text-slate-300 whitespace-pre-wrap leading-relaxed">
+${rel.body ? rel.body : 'Standard VoltageOS 6.1 release for Motorola Edge 50 (tank).'}
+                  </div>
+                </details>
+              </div>
+            `;
+          });
+          container.innerHTML = html;
+        }
+      } catch (err) {
+        console.log('Using default static release card:', err);
+      }
+    }
+
+    document.getElementById('refresh-releases').addEventListener('click', () => {
+      fetchLiveReleases();
+      showToast('Checking for latest releases...');
+    });
+
+    fetchLiveReleases();
+  </script>
+
+</body>
+</html>

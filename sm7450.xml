@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="ajimsjames" fetch="https://github.com/ajimsjames" revision="lineage-24" />
+
+  <!-- device -->
+  <project name="android_device_motorola_tank" path="device/motorola/tank" remote="ajimsjames" />
+  <project name="android_device_motorola_sm7450-common" path="device/motorola/sm7450-common" remote="ajimsjames" />
+
+  <!-- hardware -->
+  <project name="android_hardware_motorola" path="hardware/motorola" remote="ajimsjames" />
+
+  <!-- vendor -->
+  <project name="proprietary_vendor_motorola_tank" path="vendor/motorola/tank" remote="ajimsjames" />
+  <project name="proprietary_vendor_motorola_sm7450-common" path="vendor/motorola/sm7450-common" remote="ajimsjames" />
+  
+  <!-- kernel -->
+  <project name="android_kernel_motorola_sm7450" path="kernel/motorola/sm7450" remote="ajimsjames" />
+  <project name="android_kernel_motorola_sm7450-modules" path="kernel/motorola/sm7450-modules" remote="ajimsjames" />
+  <project name="android_kernel_motorola_sm7450-devicetrees" path="kernel/motorola/sm7450-devicetrees" remote="ajimsjames" />
+</manifest>
