@@ -94,10 +94,34 @@
     .animate-pulse-slow {
       animation: pulse-slow 7s infinite ease-in-out;
     }
+
+    /* Electric Arc Shimmer Effect */
+    @keyframes electric-arc {
+      0%, 100% { opacity: 0.8; filter: drop-shadow(0 0 4px #ffd700); }
+      50% { opacity: 1; filter: drop-shadow(0 0 12px #ffea00) drop-shadow(0 0 20px #ff9900); }
+    }
+    .animate-electric-arc {
+      animation: electric-arc 2.5s infinite ease-in-out;
+    }
+
+    /* Ambient Lightning Flash overlay */
+    #lightning-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.85;
+    }
   </style>
 </head>
 
 <body class="bg-[#080806] text-amber-50 antialiased selection:bg-[#ffd700] selection:text-black min-h-screen relative overflow-x-hidden">
+
+  <!-- Interactive Background Lightning Canvas -->
+  <canvas id="lightning-canvas"></canvas>
 
   <!-- Ambient Electric Yellow Lighting Effects -->
   <div class="fixed top-[-10%] left-[-10%] w-[550px] h-[550px] bg-yellow-500/15 rounded-full blur-[140px] pointer-events-none animate-pulse-slow"></div>
@@ -1152,6 +1176,144 @@ ${rel.body ? rel.body : '• Initial release'}
     });
 
     fetchLiveReleases();
+
+    // ==========================================
+    // ELECTRIC LIGHTNING BOLT CANVAS ANIMATOR
+    // ==========================================
+    (function() {
+      const canvas = document.getElementById('lightning-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let width, height;
+
+      function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      }
+      window.addEventListener('resize', resize);
+      resize();
+
+      class LightningBranch {
+        constructor(x1, y1, x2, y2, roughness, width, color, alpha) {
+          this.x1 = x1;
+          this.y1 = y1;
+          this.x2 = x2;
+          this.y2 = y2;
+          this.roughness = roughness;
+          this.width = width;
+          this.color = color;
+          this.alpha = alpha;
+          this.segments = [];
+          this.buildSegments(this.x1, this.y1, this.x2, this.y2, this.roughness);
+        }
+
+        buildSegments(x1, y1, x2, y2, displacement) {
+          if (displacement < 7) {
+            this.segments.push({ x1, y1, x2, y2 });
+          } else {
+            let midX = (x1 + x2) / 2;
+            let midY = (y1 + y2) / 2;
+            midX += (Math.random() - 0.5) * displacement;
+            midY += (Math.random() - 0.5) * displacement;
+            this.buildSegments(x1, y1, midX, midY, displacement / 2);
+            this.buildSegments(midX, midY, x2, y2, displacement / 2);
+          }
+        }
+
+        draw(context) {
+          context.save();
+          context.strokeStyle = this.color;
+          context.lineWidth = this.width;
+          context.globalAlpha = this.alpha;
+          context.shadowColor = '#ffd700';
+          context.shadowBlur = 18;
+          context.lineCap = 'round';
+          context.beginPath();
+          for (let seg of this.segments) {
+            context.moveTo(seg.x1, seg.y1);
+            context.lineTo(seg.x2, seg.y2);
+          }
+          context.stroke();
+          context.restore();
+        }
+      }
+
+      let activeBolts = [];
+
+      function createLightningBolt() {
+        const startX = Math.random() * width;
+        const startY = 0;
+        const endX = startX + (Math.random() - 0.5) * (width * 0.4);
+        const endY = height * (0.4 + Math.random() * 0.5);
+
+        const bolt = {
+          branches: [],
+          alpha: 1.0,
+          decay: 0.04 + Math.random() * 0.03
+        };
+
+        // Main primary strike
+        bolt.branches.push(new LightningBranch(startX, startY, endX, endY, 130, 2.5, '#ffffff', 1.0));
+        // Outer electric yellow glow
+        bolt.branches.push(new LightningBranch(startX, startY, endX, endY, 130, 5, '#ffea00', 0.8));
+        bolt.branches.push(new LightningBranch(startX, startY, endX, endY, 130, 10, '#ff9900', 0.4));
+
+        // Random secondary offshoot branch
+        if (Math.random() > 0.3) {
+          const forkStartX = (startX + endX) / 2 + (Math.random() - 0.5) * 40;
+          const forkStartY = endY * 0.45;
+          const forkEndX = forkStartX + (Math.random() - 0.5) * 220;
+          const forkEndY = forkStartY + 120 + Math.random() * 150;
+          bolt.branches.push(new LightningBranch(forkStartX, forkStartY, forkEndX, forkEndY, 70, 1.5, '#ffea00', 0.9));
+        }
+
+        activeBolts.push(bolt);
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+
+        for (let i = activeBolts.length - 1; i >= 0; i--) {
+          const bolt = activeBolts[i];
+          bolt.alpha -= bolt.decay;
+          if (bolt.alpha <= 0) {
+            activeBolts.splice(i, 1);
+          } else {
+            for (let branch of bolt.branches) {
+              branch.alpha = bolt.alpha;
+              branch.draw(ctx);
+            }
+          }
+        }
+
+        // Random periodic thunder strike
+        if (Math.random() < 0.018 && activeBolts.length < 2) {
+          createLightningBolt();
+        }
+
+        requestAnimationFrame(animate);
+      }
+
+      // Allow user click/tap to strike lightning
+      window.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.tagName === 'INPUT') return;
+        const startX = e.clientX + (Math.random() - 0.5) * 40;
+        const endX = e.clientX;
+        const endY = e.clientY;
+        const bolt = {
+          branches: [],
+          alpha: 1.0,
+          decay: 0.05
+        };
+        bolt.branches.push(new LightningBranch(startX, 0, endX, endY, 90, 2.5, '#ffffff', 1.0));
+        bolt.branches.push(new LightningBranch(startX, 0, endX, endY, 90, 6, '#ffea00', 0.8));
+        activeBolts.push(bolt);
+      });
+
+      // Initial gentle lightning strike
+      setTimeout(createLightningBolt, 800);
+      animate();
+    })();
   </script>
 
 </body>
