@@ -1126,13 +1126,19 @@
           let html = '';
           let grandTotalDownloads = 0;
 
-          releases.forEach((rel, index) => {
-            const isLatest = index === 0;
-            const date = rel.published_at ? rel.published_at.split('T')[0] : '2026-09-16';
             const zipAsset = rel.assets.find(a => a.name.endsWith('.zip')) || rel.assets[0];
             const zipSize = zipAsset ? (zipAsset.size / (1024 * 1024)).toFixed(1) + ' MB' : '~1.6 GB';
             const zipDownloads = zipAsset ? zipAsset.download_count || 0 : 0;
             const downloadUrl = zipAsset ? zipAsset.browser_download_url : rel.html_url;
+
+            // Parse date from published_at or tag_name
+            let formattedDate = rel.published_at ? new Date(rel.published_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : 'September 20, 2026';
+            if (zipAsset && zipAsset.name) {
+              const match = zipAsset.name.match(/voltage-6\.1-tank-(\d{8}-\d{4})/);
+              if (match) {
+                formattedDate += ` (${match[1]} UTC)`;
+              }
+            }
 
             // Calculate total downloads for this release
             let releaseDownloads = 0;
@@ -1198,7 +1204,7 @@
                         ${rel.name || rel.tag_name}
                       </h3>
                       <p class="text-xs font-mono text-amber-200/70 mt-1 flex items-center gap-4 flex-wrap">
-                        <span><i class="fa-regular fa-calendar text-yellow-500 mr-1.5"></i> Date: <strong>September 16, 2026 (20260916-1602 UTC)</strong></span>
+                        <span><i class="fa-regular fa-calendar text-yellow-500 mr-1.5"></i> Date: <strong>${formattedDate}</strong></span>
                         <span><i class="fa-solid fa-hard-drive text-yellow-500 mr-1.5"></i> Size: <strong>${zipSize}</strong></span>
                         <span><i class="fa-solid fa-tag text-yellow-500 mr-1.5"></i> Tag: <strong>${rel.tag_name}</strong></span>
                         <span><i class="fa-solid fa-circle-down text-yellow-500 mr-1.5"></i> ROM Zip: <strong>${zipDownloads} dl</strong></span>
