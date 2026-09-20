@@ -1125,7 +1125,8 @@
         if (releases && releases.length > 0) {
           let html = '';
           let grandTotalDownloads = 0;
-
+          releases.forEach((rel, index) => {
+            const isLatest = index === 0;
             const zipAsset = rel.assets.find(a => a.name.endsWith('.zip')) || rel.assets[0];
             const zipSize = zipAsset ? (zipAsset.size / (1024 * 1024)).toFixed(1) + ' MB' : '~1.6 GB';
             const zipDownloads = zipAsset ? zipAsset.download_count || 0 : 0;
