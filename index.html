@@ -952,7 +952,7 @@
 
           <pre id="manifest-code" class="p-4 rounded-xl bg-black/90 border border-yellow-900/30 text-amber-100 font-mono text-xs overflow-x-auto selection:bg-yellow-400 selection:text-black"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;manifest&gt;
-  &lt;remote name="ajimsjames" fetch="https://github.com/ajimsjames" revision="lineage-24" /&gt;
+  &lt;remote name="ajimsjames" fetch="https://github.com/ajimsjames" revision="voltage-6.0" /&gt;
 
   &lt;!-- device --&gt;
   &lt;project name="android_device_motorola_tank" path="device/motorola/tank" remote="ajimsjames" /&gt;
@@ -960,6 +960,7 @@
 
   &lt;!-- hardware --&gt;
   &lt;project name="android_hardware_motorola" path="hardware/motorola" remote="ajimsjames" /&gt;
+  &lt;project name="android_hardware_dolby" path="hardware/dolby" remote="ajimsjames" /&gt;
 
   &lt;!-- vendor --&gt;
   &lt;project name="proprietary_vendor_motorola_tank" path="vendor/motorola/tank" remote="ajimsjames" /&gt;
@@ -972,22 +973,26 @@
 &lt;/manifest&gt;</code></pre>
 
           <!-- Source Repos Grid -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 pt-2 font-mono text-xs">
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3 pt-2 font-mono text-xs">
             <a href="https://github.com/ajimsjames/android_device_motorola_tank" target="_blank" class="p-3 rounded-xl bg-[#14130d] hover:bg-[#1f1d14] border border-yellow-900/40 flex items-center justify-between text-amber-200 hover:text-yellow-400 transition-all">
-              <span>device_motorola_tank</span>
-              <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-amber-500"></i>
+              <span class="truncate mr-1">device_motorola_tank</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-amber-500 flex-shrink-0"></i>
             </a>
             <a href="https://github.com/ajimsjames/android_device_motorola_sm7450-common" target="_blank" class="p-3 rounded-xl bg-[#14130d] hover:bg-[#1f1d14] border border-yellow-900/40 flex items-center justify-between text-amber-200 hover:text-yellow-400 transition-all">
-              <span>sm7450-common</span>
-              <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-amber-500"></i>
+              <span class="truncate mr-1">sm7450-common</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-amber-500 flex-shrink-0"></i>
+            </a>
+            <a href="https://github.com/ajimsjames/android_hardware_dolby" target="_blank" class="p-3 rounded-xl bg-[#14130d] hover:bg-[#1f1d14] border border-yellow-900/40 flex items-center justify-between text-amber-200 hover:text-yellow-400 transition-all">
+              <span class="truncate mr-1">hardware_dolby</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-amber-500 flex-shrink-0"></i>
             </a>
             <a href="https://github.com/ajimsjames/android_kernel_motorola_sm7450" target="_blank" class="p-3 rounded-xl bg-[#14130d] hover:bg-[#1f1d14] border border-yellow-900/40 flex items-center justify-between text-amber-200 hover:text-yellow-400 transition-all">
-              <span>kernel_sm7450</span>
-              <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-amber-500"></i>
+              <span class="truncate mr-1">kernel_sm7450</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-amber-500 flex-shrink-0"></i>
             </a>
             <a href="https://github.com/ajimsjames/proprietary_vendor_motorola_tank" target="_blank" class="p-3 rounded-xl bg-[#14130d] hover:bg-[#1f1d14] border border-yellow-900/40 flex items-center justify-between text-amber-200 hover:text-yellow-400 transition-all">
-              <span>vendor_motorola_tank</span>
-              <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-amber-500"></i>
+              <span class="truncate mr-1">vendor_tank</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-amber-500 flex-shrink-0"></i>
             </a>
           </div>
 
@@ -1076,12 +1081,21 @@
     function copyManifest() {
       const manifest = `<?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <remote name="ajimsjames" fetch="https://github.com/ajimsjames" revision="lineage-24" />
+  <remote name="ajimsjames" fetch="https://github.com/ajimsjames" revision="voltage-6.0" />
+
+  <!-- device -->
   <project name="android_device_motorola_tank" path="device/motorola/tank" remote="ajimsjames" />
   <project name="android_device_motorola_sm7450-common" path="device/motorola/sm7450-common" remote="ajimsjames" />
+
+  <!-- hardware -->
   <project name="android_hardware_motorola" path="hardware/motorola" remote="ajimsjames" />
+  <project name="android_hardware_dolby" path="hardware/dolby" remote="ajimsjames" />
+
+  <!-- vendor -->
   <project name="proprietary_vendor_motorola_tank" path="vendor/motorola/tank" remote="ajimsjames" />
   <project name="proprietary_vendor_motorola_sm7450-common" path="vendor/motorola/sm7450-common" remote="ajimsjames" />
+  
+  <!-- kernel -->
   <project name="android_kernel_motorola_sm7450" path="kernel/motorola/sm7450" remote="ajimsjames" />
   <project name="android_kernel_motorola_sm7450-modules" path="kernel/motorola/sm7450-modules" remote="ajimsjames" />
   <project name="android_kernel_motorola_sm7450-devicetrees" path="kernel/motorola/sm7450-devicetrees" remote="ajimsjames" />

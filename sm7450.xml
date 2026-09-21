@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <remote name="ajimsjames" fetch="https://github.com/ajimsjames" revision="lineage-24" />
+  <remote name="ajimsjames" fetch="https://github.com/ajimsjames" revision="voltage-6.0" />
 
   <!-- device -->
   <project name="android_device_motorola_tank" path="device/motorola/tank" remote="ajimsjames" />
@@ -8,6 +8,7 @@
 
   <!-- hardware -->
   <project name="android_hardware_motorola" path="hardware/motorola" remote="ajimsjames" />
+  <project name="android_hardware_dolby" path="hardware/dolby" remote="ajimsjames" />
 
   <!-- vendor -->
   <project name="proprietary_vendor_motorola_tank" path="vendor/motorola/tank" remote="ajimsjames" />
